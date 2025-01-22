@@ -8,7 +8,6 @@ class ErrorException with _$ErrorException {
   factory ErrorException({
     @Default("") String code,
     @Default("") String message,
-    @Default("") String title,
   }) = _ErrorException;
 
   factory ErrorException.fromJson(Map<String, dynamic> json) =>

@@ -16,11 +16,12 @@ class StoryRemoteDataSourceImpl implements StoryRemoteDataSource {
         queryParameters: params.queryParams,
         data: params.data,
       );
-      return ApiResponse.fromJson(
+      return ApiResponse.fromTResultJson(
         result.data['listStory'],
         (data) => (data as List)
             .map((e) => StoryEntity.fromJson(e as Map<String, dynamic>))
             .toList(),
+        'loginResult',
       );
     } on DioException catch (e) {
       throw ErrorHandler(exception: e).mapDioExceptionIntoErrorException();

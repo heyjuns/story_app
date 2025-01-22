@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import 'features/authentication/authentication.dart';
+
 final GoRouter router = GoRouter(
   routes: [
+    GoRoute(
+      path: '/',
+      builder: (BuildContext context, GoRouterState state) {
+        return const SplashScreen();
+      },
+    ),
     GoRoute(
       path: '/login',
       builder: (BuildContext context, GoRouterState state) {
@@ -17,18 +25,3 @@ final GoRouter router = GoRouter(
     // ),
   ],
 );
-
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login'),
-      ),
-    );
-  }
-}
-
-

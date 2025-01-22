@@ -10,4 +10,16 @@ sealed class ApiResponse<T> with _$ApiResponse<T> {
   factory ApiResponse.fromJson(
           Map<String, dynamic> json, T Function(Object?) fromJsonT) =>
       _$ApiResponseFromJson(json, fromJsonT);
+
+  factory ApiResponse.fromTResultJson(
+    Map<String, dynamic> json,
+    T Function(Object?) fromJsonT,
+    String dynamicKey,
+  ) {
+    final extractedData = json[dynamicKey];
+    return ApiResponse.fromJson(
+      {...json, 'result': extractedData},
+      fromJsonT,
+    );
+  }
 }

@@ -10,7 +10,6 @@ _$ErrorExceptionImpl _$$ErrorExceptionImplFromJson(Map<String, dynamic> json) =>
     _$ErrorExceptionImpl(
       code: json['code'] as String? ?? "",
       message: json['message'] as String? ?? "",
-      title: json['title'] as String? ?? "",
     );
 
 Map<String, dynamic> _$$ErrorExceptionImplToJson(
@@ -18,5 +17,4 @@ Map<String, dynamic> _$$ErrorExceptionImplToJson(
     <String, dynamic>{
       'code': instance.code,
       'message': instance.message,
-      'title': instance.title,
     };

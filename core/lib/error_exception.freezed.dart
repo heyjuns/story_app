@@ -22,7 +22,6 @@ ErrorException _$ErrorExceptionFromJson(Map<String, dynamic> json) {
 mixin _$ErrorException {
   String get code => throw _privateConstructorUsedError;
   String get message => throw _privateConstructorUsedError;
-  String get title => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +35,7 @@ abstract class $ErrorExceptionCopyWith<$Res> {
           ErrorException value, $Res Function(ErrorException) then) =
       _$ErrorExceptionCopyWithImpl<$Res, ErrorException>;
   @useResult
-  $Res call({String code, String message, String title});
+  $Res call({String code, String message});
 }
 
 /// @nodoc
@@ -54,7 +53,6 @@ class _$ErrorExceptionCopyWithImpl<$Res, $Val extends ErrorException>
   $Res call({
     Object? code = null,
     Object? message = null,
-    Object? title = null,
   }) {
     return _then(_value.copyWith(
       code: null == code
@@ -64,10 +62,6 @@ class _$ErrorExceptionCopyWithImpl<$Res, $Val extends ErrorException>
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -81,7 +75,7 @@ abstract class _$$ErrorExceptionImplCopyWith<$Res>
       __$$ErrorExceptionImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String code, String message, String title});
+  $Res call({String code, String message});
 }
 
 /// @nodoc
@@ -97,7 +91,6 @@ class __$$ErrorExceptionImplCopyWithImpl<$Res>
   $Res call({
     Object? code = null,
     Object? message = null,
-    Object? title = null,
   }) {
     return _then(_$ErrorExceptionImpl(
       code: null == code
@@ -108,10 +101,6 @@ class __$$ErrorExceptionImplCopyWithImpl<$Res>
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -121,7 +110,7 @@ class __$$ErrorExceptionImplCopyWithImpl<$Res>
 class _$ErrorExceptionImpl
     with DiagnosticableTreeMixin
     implements _ErrorException {
-  _$ErrorExceptionImpl({this.code = "", this.message = "", this.title = ""});
+  _$ErrorExceptionImpl({this.code = "", this.message = ""});
 
   factory _$ErrorExceptionImpl.fromJson(Map<String, dynamic> json) =>
       _$$ErrorExceptionImplFromJson(json);
@@ -132,13 +121,10 @@ class _$ErrorExceptionImpl
   @override
   @JsonKey()
   final String message;
-  @override
-  @JsonKey()
-  final String title;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ErrorException(code: $code, message: $message, title: $title)';
+    return 'ErrorException(code: $code, message: $message)';
   }
 
   @override
@@ -147,8 +133,7 @@ class _$ErrorExceptionImpl
     properties
       ..add(DiagnosticsProperty('type', 'ErrorException'))
       ..add(DiagnosticsProperty('code', code))
-      ..add(DiagnosticsProperty('message', message))
-      ..add(DiagnosticsProperty('title', title));
+      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -157,13 +142,12 @@ class _$ErrorExceptionImpl
         (other.runtimeType == runtimeType &&
             other is _$ErrorExceptionImpl &&
             (identical(other.code, code) || other.code == code) &&
-            (identical(other.message, message) || other.message == message) &&
-            (identical(other.title, title) || other.title == title));
+            (identical(other.message, message) || other.message == message));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, code, message, title);
+  int get hashCode => Object.hash(runtimeType, code, message);
 
   @JsonKey(ignore: true)
   @override
@@ -181,10 +165,8 @@ class _$ErrorExceptionImpl
 }
 
 abstract class _ErrorException implements ErrorException {
-  factory _ErrorException(
-      {final String code,
-      final String message,
-      final String title}) = _$ErrorExceptionImpl;
+  factory _ErrorException({final String code, final String message}) =
+      _$ErrorExceptionImpl;
 
   factory _ErrorException.fromJson(Map<String, dynamic> json) =
       _$ErrorExceptionImpl.fromJson;
@@ -193,8 +175,6 @@ abstract class _ErrorException implements ErrorException {
   String get code;
   @override
   String get message;
-  @override
-  String get title;
   @override
   @JsonKey(ignore: true)
   _$$ErrorExceptionImplCopyWith<_$ErrorExceptionImpl> get copyWith =>

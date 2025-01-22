@@ -7,13 +7,8 @@ part 'error_response.g.dart';
 class ErrorResponse with _$ErrorResponse {
   @JsonSerializable(includeIfNull: false)
   factory ErrorResponse({
-    @JsonKey(name: "statusCode") required int statusCode,
-    @JsonKey(name: "error_code") String? errorCode,
-    @JsonKey(name: "timestamp") DateTime? timestamp,
-    @JsonKey(name: "path") String? path,
-    @JsonKey(name: "title_message") String? title,
-    @JsonKey(name: "message") String? message,
-    @JsonKey(name: "status") String? status,
+    @JsonKey(name: "message") required String message,
+    @JsonKey(name: "error") required bool error,
   }) = _ErrorResponse;
 
   factory ErrorResponse.fromJson(Map<String, dynamic> json) =>

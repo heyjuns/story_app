@@ -1,13 +1,15 @@
 import 'package:dio/dio.dart';
 
 class DioInterceptor extends Interceptor {
-  final String token;
+  // final String token;
 
-  DioInterceptor(this.token);
+  DioInterceptor();
 
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    options.headers['Authorization'] = 'Bearer $token';
+    options.baseUrl = 'https://story-api.dicoding.dev/v1';
+    // options.headers['Authorization'] = 'Bearer ';
+
     super.onRequest(options, handler);
   }
 

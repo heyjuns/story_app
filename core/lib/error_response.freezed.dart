@@ -20,20 +20,10 @@ ErrorResponse _$ErrorResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ErrorResponse {
-  @JsonKey(name: "statusCode")
-  int get statusCode => throw _privateConstructorUsedError;
-  @JsonKey(name: "error_code")
-  String? get errorCode => throw _privateConstructorUsedError;
-  @JsonKey(name: "timestamp")
-  DateTime? get timestamp => throw _privateConstructorUsedError;
-  @JsonKey(name: "path")
-  String? get path => throw _privateConstructorUsedError;
-  @JsonKey(name: "title_message")
-  String? get title => throw _privateConstructorUsedError;
   @JsonKey(name: "message")
-  String? get message => throw _privateConstructorUsedError;
-  @JsonKey(name: "status")
-  String? get status => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
+  @JsonKey(name: "error")
+  bool get error => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -48,13 +38,8 @@ abstract class $ErrorResponseCopyWith<$Res> {
       _$ErrorResponseCopyWithImpl<$Res, ErrorResponse>;
   @useResult
   $Res call(
-      {@JsonKey(name: "statusCode") int statusCode,
-      @JsonKey(name: "error_code") String? errorCode,
-      @JsonKey(name: "timestamp") DateTime? timestamp,
-      @JsonKey(name: "path") String? path,
-      @JsonKey(name: "title_message") String? title,
-      @JsonKey(name: "message") String? message,
-      @JsonKey(name: "status") String? status});
+      {@JsonKey(name: "message") String message,
+      @JsonKey(name: "error") bool error});
 }
 
 /// @nodoc
@@ -70,43 +55,18 @@ class _$ErrorResponseCopyWithImpl<$Res, $Val extends ErrorResponse>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statusCode = null,
-    Object? errorCode = freezed,
-    Object? timestamp = freezed,
-    Object? path = freezed,
-    Object? title = freezed,
-    Object? message = freezed,
-    Object? status = freezed,
+    Object? message = null,
+    Object? error = null,
   }) {
     return _then(_value.copyWith(
-      statusCode: null == statusCode
-          ? _value.statusCode
-          : statusCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      errorCode: freezed == errorCode
-          ? _value.errorCode
-          : errorCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      timestamp: freezed == timestamp
-          ? _value.timestamp
-          : timestamp // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      path: freezed == path
-          ? _value.path
-          : path // ignore: cast_nullable_to_non_nullable
-              as String?,
-      title: freezed == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String?,
-      message: freezed == message
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -120,13 +80,8 @@ abstract class _$$ErrorResponseImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: "statusCode") int statusCode,
-      @JsonKey(name: "error_code") String? errorCode,
-      @JsonKey(name: "timestamp") DateTime? timestamp,
-      @JsonKey(name: "path") String? path,
-      @JsonKey(name: "title_message") String? title,
-      @JsonKey(name: "message") String? message,
-      @JsonKey(name: "status") String? status});
+      {@JsonKey(name: "message") String message,
+      @JsonKey(name: "error") bool error});
 }
 
 /// @nodoc
@@ -140,43 +95,18 @@ class __$$ErrorResponseImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statusCode = null,
-    Object? errorCode = freezed,
-    Object? timestamp = freezed,
-    Object? path = freezed,
-    Object? title = freezed,
-    Object? message = freezed,
-    Object? status = freezed,
+    Object? message = null,
+    Object? error = null,
   }) {
     return _then(_$ErrorResponseImpl(
-      statusCode: null == statusCode
-          ? _value.statusCode
-          : statusCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      errorCode: freezed == errorCode
-          ? _value.errorCode
-          : errorCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      timestamp: freezed == timestamp
-          ? _value.timestamp
-          : timestamp // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      path: freezed == path
-          ? _value.path
-          : path // ignore: cast_nullable_to_non_nullable
-              as String?,
-      title: freezed == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String?,
-      message: freezed == message
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -188,42 +118,22 @@ class _$ErrorResponseImpl
     with DiagnosticableTreeMixin
     implements _ErrorResponse {
   _$ErrorResponseImpl(
-      {@JsonKey(name: "statusCode") required this.statusCode,
-      @JsonKey(name: "error_code") this.errorCode,
-      @JsonKey(name: "timestamp") this.timestamp,
-      @JsonKey(name: "path") this.path,
-      @JsonKey(name: "title_message") this.title,
-      @JsonKey(name: "message") this.message,
-      @JsonKey(name: "status") this.status});
+      {@JsonKey(name: "message") required this.message,
+      @JsonKey(name: "error") required this.error});
 
   factory _$ErrorResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$ErrorResponseImplFromJson(json);
 
   @override
-  @JsonKey(name: "statusCode")
-  final int statusCode;
-  @override
-  @JsonKey(name: "error_code")
-  final String? errorCode;
-  @override
-  @JsonKey(name: "timestamp")
-  final DateTime? timestamp;
-  @override
-  @JsonKey(name: "path")
-  final String? path;
-  @override
-  @JsonKey(name: "title_message")
-  final String? title;
-  @override
   @JsonKey(name: "message")
-  final String? message;
+  final String message;
   @override
-  @JsonKey(name: "status")
-  final String? status;
+  @JsonKey(name: "error")
+  final bool error;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ErrorResponse(statusCode: $statusCode, errorCode: $errorCode, timestamp: $timestamp, path: $path, title: $title, message: $message, status: $status)';
+    return 'ErrorResponse(message: $message, error: $error)';
   }
 
   @override
@@ -231,13 +141,8 @@ class _$ErrorResponseImpl
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'ErrorResponse'))
-      ..add(DiagnosticsProperty('statusCode', statusCode))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('timestamp', timestamp))
-      ..add(DiagnosticsProperty('path', path))
-      ..add(DiagnosticsProperty('title', title))
       ..add(DiagnosticsProperty('message', message))
-      ..add(DiagnosticsProperty('status', status));
+      ..add(DiagnosticsProperty('error', error));
   }
 
   @override
@@ -245,22 +150,13 @@ class _$ErrorResponseImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ErrorResponseImpl &&
-            (identical(other.statusCode, statusCode) ||
-                other.statusCode == statusCode) &&
-            (identical(other.errorCode, errorCode) ||
-                other.errorCode == errorCode) &&
-            (identical(other.timestamp, timestamp) ||
-                other.timestamp == timestamp) &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.title, title) || other.title == title) &&
             (identical(other.message, message) || other.message == message) &&
-            (identical(other.status, status) || other.status == status));
+            (identical(other.error, error) || other.error == error));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, statusCode, errorCode, timestamp,
-      path, title, message, status);
+  int get hashCode => Object.hash(runtimeType, message, error);
 
   @JsonKey(ignore: true)
   @override
@@ -278,38 +174,18 @@ class _$ErrorResponseImpl
 
 abstract class _ErrorResponse implements ErrorResponse {
   factory _ErrorResponse(
-      {@JsonKey(name: "statusCode") required final int statusCode,
-      @JsonKey(name: "error_code") final String? errorCode,
-      @JsonKey(name: "timestamp") final DateTime? timestamp,
-      @JsonKey(name: "path") final String? path,
-      @JsonKey(name: "title_message") final String? title,
-      @JsonKey(name: "message") final String? message,
-      @JsonKey(name: "status") final String? status}) = _$ErrorResponseImpl;
+      {@JsonKey(name: "message") required final String message,
+      @JsonKey(name: "error") required final bool error}) = _$ErrorResponseImpl;
 
   factory _ErrorResponse.fromJson(Map<String, dynamic> json) =
       _$ErrorResponseImpl.fromJson;
 
   @override
-  @JsonKey(name: "statusCode")
-  int get statusCode;
-  @override
-  @JsonKey(name: "error_code")
-  String? get errorCode;
-  @override
-  @JsonKey(name: "timestamp")
-  DateTime? get timestamp;
-  @override
-  @JsonKey(name: "path")
-  String? get path;
-  @override
-  @JsonKey(name: "title_message")
-  String? get title;
-  @override
   @JsonKey(name: "message")
-  String? get message;
+  String get message;
   @override
-  @JsonKey(name: "status")
-  String? get status;
+  @JsonKey(name: "error")
+  bool get error;
   @override
   @JsonKey(ignore: true)
   _$$ErrorResponseImplCopyWith<_$ErrorResponseImpl> get copyWith =>

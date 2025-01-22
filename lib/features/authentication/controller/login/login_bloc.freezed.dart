@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'story_bloc.dart';
+part of 'login_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,20 +15,21 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$StoryEvent {
+mixin _$LoginEvent {
+  LoginDto get dto => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() fetch,
+    required TResult Function(LoginDto dto) fetch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? fetch,
+    TResult? Function(LoginDto dto)? fetch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetch,
+    TResult Function(LoginDto dto)? fetch,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -48,85 +49,144 @@ mixin _$StoryEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $LoginEventCopyWith<LoginEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $StoryEventCopyWith<$Res> {
-  factory $StoryEventCopyWith(
-          StoryEvent value, $Res Function(StoryEvent) then) =
-      _$StoryEventCopyWithImpl<$Res, StoryEvent>;
+abstract class $LoginEventCopyWith<$Res> {
+  factory $LoginEventCopyWith(
+          LoginEvent value, $Res Function(LoginEvent) then) =
+      _$LoginEventCopyWithImpl<$Res, LoginEvent>;
+  @useResult
+  $Res call({LoginDto dto});
+
+  $LoginDtoCopyWith<$Res> get dto;
 }
 
 /// @nodoc
-class _$StoryEventCopyWithImpl<$Res, $Val extends StoryEvent>
-    implements $StoryEventCopyWith<$Res> {
-  _$StoryEventCopyWithImpl(this._value, this._then);
+class _$LoginEventCopyWithImpl<$Res, $Val extends LoginEvent>
+    implements $LoginEventCopyWith<$Res> {
+  _$LoginEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? dto = null,
+  }) {
+    return _then(_value.copyWith(
+      dto: null == dto
+          ? _value.dto
+          : dto // ignore: cast_nullable_to_non_nullable
+              as LoginDto,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $LoginDtoCopyWith<$Res> get dto {
+    return $LoginDtoCopyWith<$Res>(_value.dto, (value) {
+      return _then(_value.copyWith(dto: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
-abstract class _$$FetchImplCopyWith<$Res> {
+abstract class _$$FetchImplCopyWith<$Res> implements $LoginEventCopyWith<$Res> {
   factory _$$FetchImplCopyWith(
           _$FetchImpl value, $Res Function(_$FetchImpl) then) =
       __$$FetchImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({LoginDto dto});
+
+  @override
+  $LoginDtoCopyWith<$Res> get dto;
 }
 
 /// @nodoc
 class __$$FetchImplCopyWithImpl<$Res>
-    extends _$StoryEventCopyWithImpl<$Res, _$FetchImpl>
+    extends _$LoginEventCopyWithImpl<$Res, _$FetchImpl>
     implements _$$FetchImplCopyWith<$Res> {
   __$$FetchImplCopyWithImpl(
       _$FetchImpl _value, $Res Function(_$FetchImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? dto = null,
+  }) {
+    return _then(_$FetchImpl(
+      dto: null == dto
+          ? _value.dto
+          : dto // ignore: cast_nullable_to_non_nullable
+              as LoginDto,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$FetchImpl implements _Fetch {
-  const _$FetchImpl();
+  const _$FetchImpl({required this.dto});
+
+  @override
+  final LoginDto dto;
 
   @override
   String toString() {
-    return 'StoryEvent.fetch()';
+    return 'LoginEvent.fetch(dto: $dto)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$FetchImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$FetchImpl &&
+            (identical(other.dto, dto) || other.dto == dto));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, dto);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FetchImplCopyWith<_$FetchImpl> get copyWith =>
+      __$$FetchImplCopyWithImpl<_$FetchImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() fetch,
+    required TResult Function(LoginDto dto) fetch,
   }) {
-    return fetch();
+    return fetch(dto);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? fetch,
+    TResult? Function(LoginDto dto)? fetch,
   }) {
-    return fetch?.call();
+    return fetch?.call(dto);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetch,
+    TResult Function(LoginDto dto)? fetch,
     required TResult orElse(),
   }) {
     if (fetch != null) {
-      return fetch();
+      return fetch(dto);
     }
     return orElse();
   }
@@ -160,17 +220,24 @@ class _$FetchImpl implements _Fetch {
   }
 }
 
-abstract class _Fetch implements StoryEvent {
-  const factory _Fetch() = _$FetchImpl;
+abstract class _Fetch implements LoginEvent {
+  const factory _Fetch({required final LoginDto dto}) = _$FetchImpl;
+
+  @override
+  LoginDto get dto;
+  @override
+  @JsonKey(ignore: true)
+  _$$FetchImplCopyWith<_$FetchImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$StoryState {
+mixin _$LoginState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(StoryEntity story) loaded,
+    required TResult Function(LoginEntity login) loaded,
     required TResult Function(ErrorException error) failed,
   }) =>
       throw _privateConstructorUsedError;
@@ -178,7 +245,7 @@ mixin _$StoryState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(StoryEntity story)? loaded,
+    TResult? Function(LoginEntity login)? loaded,
     TResult? Function(ErrorException error)? failed,
   }) =>
       throw _privateConstructorUsedError;
@@ -186,49 +253,49 @@ mixin _$StoryState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(StoryEntity story)? loaded,
+    TResult Function(LoginEntity login)? loaded,
     TResult Function(ErrorException error)? failed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(StoryInitial value) initial,
-    required TResult Function(StoryLoading value) loading,
-    required TResult Function(StoryLoaded value) loaded,
-    required TResult Function(StoryFailed value) failed,
+    required TResult Function(LoginInitial value) initial,
+    required TResult Function(LoginLoading value) loading,
+    required TResult Function(LoginLoaded value) loaded,
+    required TResult Function(LoginFailed value) failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(StoryInitial value)? initial,
-    TResult? Function(StoryLoading value)? loading,
-    TResult? Function(StoryLoaded value)? loaded,
-    TResult? Function(StoryFailed value)? failed,
+    TResult? Function(LoginInitial value)? initial,
+    TResult? Function(LoginLoading value)? loading,
+    TResult? Function(LoginLoaded value)? loaded,
+    TResult? Function(LoginFailed value)? failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(StoryInitial value)? initial,
-    TResult Function(StoryLoading value)? loading,
-    TResult Function(StoryLoaded value)? loaded,
-    TResult Function(StoryFailed value)? failed,
+    TResult Function(LoginInitial value)? initial,
+    TResult Function(LoginLoading value)? loading,
+    TResult Function(LoginLoaded value)? loaded,
+    TResult Function(LoginFailed value)? failed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $StoryStateCopyWith<$Res> {
-  factory $StoryStateCopyWith(
-          StoryState value, $Res Function(StoryState) then) =
-      _$StoryStateCopyWithImpl<$Res, StoryState>;
+abstract class $LoginStateCopyWith<$Res> {
+  factory $LoginStateCopyWith(
+          LoginState value, $Res Function(LoginState) then) =
+      _$LoginStateCopyWithImpl<$Res, LoginState>;
 }
 
 /// @nodoc
-class _$StoryStateCopyWithImpl<$Res, $Val extends StoryState>
-    implements $StoryStateCopyWith<$Res> {
-  _$StoryStateCopyWithImpl(this._value, this._then);
+class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
+    implements $LoginStateCopyWith<$Res> {
+  _$LoginStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -237,35 +304,35 @@ class _$StoryStateCopyWithImpl<$Res, $Val extends StoryState>
 }
 
 /// @nodoc
-abstract class _$$StoryInitialImplCopyWith<$Res> {
-  factory _$$StoryInitialImplCopyWith(
-          _$StoryInitialImpl value, $Res Function(_$StoryInitialImpl) then) =
-      __$$StoryInitialImplCopyWithImpl<$Res>;
+abstract class _$$LoginInitialImplCopyWith<$Res> {
+  factory _$$LoginInitialImplCopyWith(
+          _$LoginInitialImpl value, $Res Function(_$LoginInitialImpl) then) =
+      __$$LoginInitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$StoryInitialImplCopyWithImpl<$Res>
-    extends _$StoryStateCopyWithImpl<$Res, _$StoryInitialImpl>
-    implements _$$StoryInitialImplCopyWith<$Res> {
-  __$$StoryInitialImplCopyWithImpl(
-      _$StoryInitialImpl _value, $Res Function(_$StoryInitialImpl) _then)
+class __$$LoginInitialImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$LoginInitialImpl>
+    implements _$$LoginInitialImplCopyWith<$Res> {
+  __$$LoginInitialImplCopyWithImpl(
+      _$LoginInitialImpl _value, $Res Function(_$LoginInitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$StoryInitialImpl implements StoryInitial {
-  const _$StoryInitialImpl();
+class _$LoginInitialImpl implements LoginInitial {
+  const _$LoginInitialImpl();
 
   @override
   String toString() {
-    return 'StoryState.initial()';
+    return 'LoginState.initial()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$StoryInitialImpl);
+        (other.runtimeType == runtimeType && other is _$LoginInitialImpl);
   }
 
   @override
@@ -276,7 +343,7 @@ class _$StoryInitialImpl implements StoryInitial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(StoryEntity story) loaded,
+    required TResult Function(LoginEntity login) loaded,
     required TResult Function(ErrorException error) failed,
   }) {
     return initial();
@@ -287,7 +354,7 @@ class _$StoryInitialImpl implements StoryInitial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(StoryEntity story)? loaded,
+    TResult? Function(LoginEntity login)? loaded,
     TResult? Function(ErrorException error)? failed,
   }) {
     return initial?.call();
@@ -298,7 +365,7 @@ class _$StoryInitialImpl implements StoryInitial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(StoryEntity story)? loaded,
+    TResult Function(LoginEntity login)? loaded,
     TResult Function(ErrorException error)? failed,
     required TResult orElse(),
   }) {
@@ -311,10 +378,10 @@ class _$StoryInitialImpl implements StoryInitial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(StoryInitial value) initial,
-    required TResult Function(StoryLoading value) loading,
-    required TResult Function(StoryLoaded value) loaded,
-    required TResult Function(StoryFailed value) failed,
+    required TResult Function(LoginInitial value) initial,
+    required TResult Function(LoginLoading value) loading,
+    required TResult Function(LoginLoaded value) loaded,
+    required TResult Function(LoginFailed value) failed,
   }) {
     return initial(this);
   }
@@ -322,10 +389,10 @@ class _$StoryInitialImpl implements StoryInitial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(StoryInitial value)? initial,
-    TResult? Function(StoryLoading value)? loading,
-    TResult? Function(StoryLoaded value)? loaded,
-    TResult? Function(StoryFailed value)? failed,
+    TResult? Function(LoginInitial value)? initial,
+    TResult? Function(LoginLoading value)? loading,
+    TResult? Function(LoginLoaded value)? loaded,
+    TResult? Function(LoginFailed value)? failed,
   }) {
     return initial?.call(this);
   }
@@ -333,10 +400,10 @@ class _$StoryInitialImpl implements StoryInitial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(StoryInitial value)? initial,
-    TResult Function(StoryLoading value)? loading,
-    TResult Function(StoryLoaded value)? loaded,
-    TResult Function(StoryFailed value)? failed,
+    TResult Function(LoginInitial value)? initial,
+    TResult Function(LoginLoading value)? loading,
+    TResult Function(LoginLoaded value)? loaded,
+    TResult Function(LoginFailed value)? failed,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -346,40 +413,40 @@ class _$StoryInitialImpl implements StoryInitial {
   }
 }
 
-abstract class StoryInitial implements StoryState {
-  const factory StoryInitial() = _$StoryInitialImpl;
+abstract class LoginInitial implements LoginState {
+  const factory LoginInitial() = _$LoginInitialImpl;
 }
 
 /// @nodoc
-abstract class _$$StoryLoadingImplCopyWith<$Res> {
-  factory _$$StoryLoadingImplCopyWith(
-          _$StoryLoadingImpl value, $Res Function(_$StoryLoadingImpl) then) =
-      __$$StoryLoadingImplCopyWithImpl<$Res>;
+abstract class _$$LoginLoadingImplCopyWith<$Res> {
+  factory _$$LoginLoadingImplCopyWith(
+          _$LoginLoadingImpl value, $Res Function(_$LoginLoadingImpl) then) =
+      __$$LoginLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$StoryLoadingImplCopyWithImpl<$Res>
-    extends _$StoryStateCopyWithImpl<$Res, _$StoryLoadingImpl>
-    implements _$$StoryLoadingImplCopyWith<$Res> {
-  __$$StoryLoadingImplCopyWithImpl(
-      _$StoryLoadingImpl _value, $Res Function(_$StoryLoadingImpl) _then)
+class __$$LoginLoadingImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$LoginLoadingImpl>
+    implements _$$LoginLoadingImplCopyWith<$Res> {
+  __$$LoginLoadingImplCopyWithImpl(
+      _$LoginLoadingImpl _value, $Res Function(_$LoginLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$StoryLoadingImpl implements StoryLoading {
-  const _$StoryLoadingImpl();
+class _$LoginLoadingImpl implements LoginLoading {
+  const _$LoginLoadingImpl();
 
   @override
   String toString() {
-    return 'StoryState.loading()';
+    return 'LoginState.loading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$StoryLoadingImpl);
+        (other.runtimeType == runtimeType && other is _$LoginLoadingImpl);
   }
 
   @override
@@ -390,7 +457,7 @@ class _$StoryLoadingImpl implements StoryLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(StoryEntity story) loaded,
+    required TResult Function(LoginEntity login) loaded,
     required TResult Function(ErrorException error) failed,
   }) {
     return loading();
@@ -401,7 +468,7 @@ class _$StoryLoadingImpl implements StoryLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(StoryEntity story)? loaded,
+    TResult? Function(LoginEntity login)? loaded,
     TResult? Function(ErrorException error)? failed,
   }) {
     return loading?.call();
@@ -412,7 +479,7 @@ class _$StoryLoadingImpl implements StoryLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(StoryEntity story)? loaded,
+    TResult Function(LoginEntity login)? loaded,
     TResult Function(ErrorException error)? failed,
     required TResult orElse(),
   }) {
@@ -425,10 +492,10 @@ class _$StoryLoadingImpl implements StoryLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(StoryInitial value) initial,
-    required TResult Function(StoryLoading value) loading,
-    required TResult Function(StoryLoaded value) loaded,
-    required TResult Function(StoryFailed value) failed,
+    required TResult Function(LoginInitial value) initial,
+    required TResult Function(LoginLoading value) loading,
+    required TResult Function(LoginLoaded value) loaded,
+    required TResult Function(LoginFailed value) failed,
   }) {
     return loading(this);
   }
@@ -436,10 +503,10 @@ class _$StoryLoadingImpl implements StoryLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(StoryInitial value)? initial,
-    TResult? Function(StoryLoading value)? loading,
-    TResult? Function(StoryLoaded value)? loaded,
-    TResult? Function(StoryFailed value)? failed,
+    TResult? Function(LoginInitial value)? initial,
+    TResult? Function(LoginLoading value)? loading,
+    TResult? Function(LoginLoaded value)? loaded,
+    TResult? Function(LoginFailed value)? failed,
   }) {
     return loading?.call(this);
   }
@@ -447,10 +514,10 @@ class _$StoryLoadingImpl implements StoryLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(StoryInitial value)? initial,
-    TResult Function(StoryLoading value)? loading,
-    TResult Function(StoryLoaded value)? loaded,
-    TResult Function(StoryFailed value)? failed,
+    TResult Function(LoginInitial value)? initial,
+    TResult Function(LoginLoading value)? loading,
+    TResult Function(LoginLoaded value)? loaded,
+    TResult Function(LoginFailed value)? failed,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -460,90 +527,90 @@ class _$StoryLoadingImpl implements StoryLoading {
   }
 }
 
-abstract class StoryLoading implements StoryState {
-  const factory StoryLoading() = _$StoryLoadingImpl;
+abstract class LoginLoading implements LoginState {
+  const factory LoginLoading() = _$LoginLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$StoryLoadedImplCopyWith<$Res> {
-  factory _$$StoryLoadedImplCopyWith(
-          _$StoryLoadedImpl value, $Res Function(_$StoryLoadedImpl) then) =
-      __$$StoryLoadedImplCopyWithImpl<$Res>;
+abstract class _$$LoginLoadedImplCopyWith<$Res> {
+  factory _$$LoginLoadedImplCopyWith(
+          _$LoginLoadedImpl value, $Res Function(_$LoginLoadedImpl) then) =
+      __$$LoginLoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({StoryEntity story});
+  $Res call({LoginEntity login});
 
-  $StoryEntityCopyWith<$Res> get story;
+  $LoginEntityCopyWith<$Res> get login;
 }
 
 /// @nodoc
-class __$$StoryLoadedImplCopyWithImpl<$Res>
-    extends _$StoryStateCopyWithImpl<$Res, _$StoryLoadedImpl>
-    implements _$$StoryLoadedImplCopyWith<$Res> {
-  __$$StoryLoadedImplCopyWithImpl(
-      _$StoryLoadedImpl _value, $Res Function(_$StoryLoadedImpl) _then)
+class __$$LoginLoadedImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$LoginLoadedImpl>
+    implements _$$LoginLoadedImplCopyWith<$Res> {
+  __$$LoginLoadedImplCopyWithImpl(
+      _$LoginLoadedImpl _value, $Res Function(_$LoginLoadedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? story = null,
+    Object? login = null,
   }) {
-    return _then(_$StoryLoadedImpl(
-      story: null == story
-          ? _value.story
-          : story // ignore: cast_nullable_to_non_nullable
-              as StoryEntity,
+    return _then(_$LoginLoadedImpl(
+      login: null == login
+          ? _value.login
+          : login // ignore: cast_nullable_to_non_nullable
+              as LoginEntity,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $StoryEntityCopyWith<$Res> get story {
-    return $StoryEntityCopyWith<$Res>(_value.story, (value) {
-      return _then(_value.copyWith(story: value));
+  $LoginEntityCopyWith<$Res> get login {
+    return $LoginEntityCopyWith<$Res>(_value.login, (value) {
+      return _then(_value.copyWith(login: value));
     });
   }
 }
 
 /// @nodoc
 
-class _$StoryLoadedImpl implements StoryLoaded {
-  const _$StoryLoadedImpl({required this.story});
+class _$LoginLoadedImpl implements LoginLoaded {
+  const _$LoginLoadedImpl({required this.login});
 
   @override
-  final StoryEntity story;
+  final LoginEntity login;
 
   @override
   String toString() {
-    return 'StoryState.loaded(story: $story)';
+    return 'LoginState.loaded(login: $login)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$StoryLoadedImpl &&
-            (identical(other.story, story) || other.story == story));
+            other is _$LoginLoadedImpl &&
+            (identical(other.login, login) || other.login == login));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, story);
+  int get hashCode => Object.hash(runtimeType, login);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$StoryLoadedImplCopyWith<_$StoryLoadedImpl> get copyWith =>
-      __$$StoryLoadedImplCopyWithImpl<_$StoryLoadedImpl>(this, _$identity);
+  _$$LoginLoadedImplCopyWith<_$LoginLoadedImpl> get copyWith =>
+      __$$LoginLoadedImplCopyWithImpl<_$LoginLoadedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(StoryEntity story) loaded,
+    required TResult Function(LoginEntity login) loaded,
     required TResult Function(ErrorException error) failed,
   }) {
-    return loaded(story);
+    return loaded(login);
   }
 
   @override
@@ -551,10 +618,10 @@ class _$StoryLoadedImpl implements StoryLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(StoryEntity story)? loaded,
+    TResult? Function(LoginEntity login)? loaded,
     TResult? Function(ErrorException error)? failed,
   }) {
-    return loaded?.call(story);
+    return loaded?.call(login);
   }
 
   @override
@@ -562,12 +629,12 @@ class _$StoryLoadedImpl implements StoryLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(StoryEntity story)? loaded,
+    TResult Function(LoginEntity login)? loaded,
     TResult Function(ErrorException error)? failed,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(story);
+      return loaded(login);
     }
     return orElse();
   }
@@ -575,10 +642,10 @@ class _$StoryLoadedImpl implements StoryLoaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(StoryInitial value) initial,
-    required TResult Function(StoryLoading value) loading,
-    required TResult Function(StoryLoaded value) loaded,
-    required TResult Function(StoryFailed value) failed,
+    required TResult Function(LoginInitial value) initial,
+    required TResult Function(LoginLoading value) loading,
+    required TResult Function(LoginLoaded value) loaded,
+    required TResult Function(LoginFailed value) failed,
   }) {
     return loaded(this);
   }
@@ -586,10 +653,10 @@ class _$StoryLoadedImpl implements StoryLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(StoryInitial value)? initial,
-    TResult? Function(StoryLoading value)? loading,
-    TResult? Function(StoryLoaded value)? loaded,
-    TResult? Function(StoryFailed value)? failed,
+    TResult? Function(LoginInitial value)? initial,
+    TResult? Function(LoginLoading value)? loading,
+    TResult? Function(LoginLoaded value)? loaded,
+    TResult? Function(LoginFailed value)? failed,
   }) {
     return loaded?.call(this);
   }
@@ -597,10 +664,10 @@ class _$StoryLoadedImpl implements StoryLoaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(StoryInitial value)? initial,
-    TResult Function(StoryLoading value)? loading,
-    TResult Function(StoryLoaded value)? loaded,
-    TResult Function(StoryFailed value)? failed,
+    TResult Function(LoginInitial value)? initial,
+    TResult Function(LoginLoading value)? loading,
+    TResult Function(LoginLoaded value)? loaded,
+    TResult Function(LoginFailed value)? failed,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -610,21 +677,21 @@ class _$StoryLoadedImpl implements StoryLoaded {
   }
 }
 
-abstract class StoryLoaded implements StoryState {
-  const factory StoryLoaded({required final StoryEntity story}) =
-      _$StoryLoadedImpl;
+abstract class LoginLoaded implements LoginState {
+  const factory LoginLoaded({required final LoginEntity login}) =
+      _$LoginLoadedImpl;
 
-  StoryEntity get story;
+  LoginEntity get login;
   @JsonKey(ignore: true)
-  _$$StoryLoadedImplCopyWith<_$StoryLoadedImpl> get copyWith =>
+  _$$LoginLoadedImplCopyWith<_$LoginLoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$StoryFailedImplCopyWith<$Res> {
-  factory _$$StoryFailedImplCopyWith(
-          _$StoryFailedImpl value, $Res Function(_$StoryFailedImpl) then) =
-      __$$StoryFailedImplCopyWithImpl<$Res>;
+abstract class _$$LoginFailedImplCopyWith<$Res> {
+  factory _$$LoginFailedImplCopyWith(
+          _$LoginFailedImpl value, $Res Function(_$LoginFailedImpl) then) =
+      __$$LoginFailedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({ErrorException error});
 
@@ -632,11 +699,11 @@ abstract class _$$StoryFailedImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$StoryFailedImplCopyWithImpl<$Res>
-    extends _$StoryStateCopyWithImpl<$Res, _$StoryFailedImpl>
-    implements _$$StoryFailedImplCopyWith<$Res> {
-  __$$StoryFailedImplCopyWithImpl(
-      _$StoryFailedImpl _value, $Res Function(_$StoryFailedImpl) _then)
+class __$$LoginFailedImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$LoginFailedImpl>
+    implements _$$LoginFailedImplCopyWith<$Res> {
+  __$$LoginFailedImplCopyWithImpl(
+      _$LoginFailedImpl _value, $Res Function(_$LoginFailedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -644,7 +711,7 @@ class __$$StoryFailedImplCopyWithImpl<$Res>
   $Res call({
     Object? error = null,
   }) {
-    return _then(_$StoryFailedImpl(
+    return _then(_$LoginFailedImpl(
       error: null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -663,22 +730,22 @@ class __$$StoryFailedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$StoryFailedImpl implements StoryFailed {
-  const _$StoryFailedImpl({required this.error});
+class _$LoginFailedImpl implements LoginFailed {
+  const _$LoginFailedImpl({required this.error});
 
   @override
   final ErrorException error;
 
   @override
   String toString() {
-    return 'StoryState.failed(error: $error)';
+    return 'LoginState.failed(error: $error)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$StoryFailedImpl &&
+            other is _$LoginFailedImpl &&
             (identical(other.error, error) || other.error == error));
   }
 
@@ -688,15 +755,15 @@ class _$StoryFailedImpl implements StoryFailed {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$StoryFailedImplCopyWith<_$StoryFailedImpl> get copyWith =>
-      __$$StoryFailedImplCopyWithImpl<_$StoryFailedImpl>(this, _$identity);
+  _$$LoginFailedImplCopyWith<_$LoginFailedImpl> get copyWith =>
+      __$$LoginFailedImplCopyWithImpl<_$LoginFailedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(StoryEntity story) loaded,
+    required TResult Function(LoginEntity login) loaded,
     required TResult Function(ErrorException error) failed,
   }) {
     return failed(error);
@@ -707,7 +774,7 @@ class _$StoryFailedImpl implements StoryFailed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(StoryEntity story)? loaded,
+    TResult? Function(LoginEntity login)? loaded,
     TResult? Function(ErrorException error)? failed,
   }) {
     return failed?.call(error);
@@ -718,7 +785,7 @@ class _$StoryFailedImpl implements StoryFailed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(StoryEntity story)? loaded,
+    TResult Function(LoginEntity login)? loaded,
     TResult Function(ErrorException error)? failed,
     required TResult orElse(),
   }) {
@@ -731,10 +798,10 @@ class _$StoryFailedImpl implements StoryFailed {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(StoryInitial value) initial,
-    required TResult Function(StoryLoading value) loading,
-    required TResult Function(StoryLoaded value) loaded,
-    required TResult Function(StoryFailed value) failed,
+    required TResult Function(LoginInitial value) initial,
+    required TResult Function(LoginLoading value) loading,
+    required TResult Function(LoginLoaded value) loaded,
+    required TResult Function(LoginFailed value) failed,
   }) {
     return failed(this);
   }
@@ -742,10 +809,10 @@ class _$StoryFailedImpl implements StoryFailed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(StoryInitial value)? initial,
-    TResult? Function(StoryLoading value)? loading,
-    TResult? Function(StoryLoaded value)? loaded,
-    TResult? Function(StoryFailed value)? failed,
+    TResult? Function(LoginInitial value)? initial,
+    TResult? Function(LoginLoading value)? loading,
+    TResult? Function(LoginLoaded value)? loaded,
+    TResult? Function(LoginFailed value)? failed,
   }) {
     return failed?.call(this);
   }
@@ -753,10 +820,10 @@ class _$StoryFailedImpl implements StoryFailed {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(StoryInitial value)? initial,
-    TResult Function(StoryLoading value)? loading,
-    TResult Function(StoryLoaded value)? loaded,
-    TResult Function(StoryFailed value)? failed,
+    TResult Function(LoginInitial value)? initial,
+    TResult Function(LoginLoading value)? loading,
+    TResult Function(LoginLoaded value)? loaded,
+    TResult Function(LoginFailed value)? failed,
     required TResult orElse(),
   }) {
     if (failed != null) {
@@ -766,12 +833,12 @@ class _$StoryFailedImpl implements StoryFailed {
   }
 }
 
-abstract class StoryFailed implements StoryState {
-  const factory StoryFailed({required final ErrorException error}) =
-      _$StoryFailedImpl;
+abstract class LoginFailed implements LoginState {
+  const factory LoginFailed({required final ErrorException error}) =
+      _$LoginFailedImpl;
 
   ErrorException get error;
   @JsonKey(ignore: true)
-  _$$StoryFailedImplCopyWith<_$StoryFailedImpl> get copyWith =>
+  _$$LoginFailedImplCopyWith<_$LoginFailedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
