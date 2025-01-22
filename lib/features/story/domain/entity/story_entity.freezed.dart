@@ -176,7 +176,7 @@ class __$$StoryEntityImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$StoryEntityImpl with DiagnosticableTreeMixin implements _StoryEntity {
+class _$StoryEntityImpl extends _StoryEntity with DiagnosticableTreeMixin {
   _$StoryEntityImpl(
       {required this.id,
       required this.name,
@@ -184,7 +184,8 @@ class _$StoryEntityImpl with DiagnosticableTreeMixin implements _StoryEntity {
       required this.photoUrl,
       required this.createdAt,
       this.lat,
-      this.lon});
+      this.lon})
+      : super._();
 
   factory _$StoryEntityImpl.fromJson(Map<String, dynamic> json) =>
       _$$StoryEntityImplFromJson(json);
@@ -259,7 +260,7 @@ class _$StoryEntityImpl with DiagnosticableTreeMixin implements _StoryEntity {
   }
 }
 
-abstract class _StoryEntity implements StoryEntity {
+abstract class _StoryEntity extends StoryEntity {
   factory _StoryEntity(
       {required final String id,
       required final String name,
@@ -268,6 +269,7 @@ abstract class _StoryEntity implements StoryEntity {
       required final DateTime createdAt,
       final double? lat,
       final double? lon}) = _$StoryEntityImpl;
+  _StoryEntity._() : super._();
 
   factory _StoryEntity.fromJson(Map<String, dynamic> json) =
       _$StoryEntityImpl.fromJson;

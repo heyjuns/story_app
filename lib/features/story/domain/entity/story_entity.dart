@@ -5,6 +5,7 @@ part 'story_entity.g.dart';
 
 @freezed
 class StoryEntity with _$StoryEntity {
+  StoryEntity._();
   factory StoryEntity({
     required String id,
     required String name,
@@ -17,4 +18,12 @@ class StoryEntity with _$StoryEntity {
 
   factory StoryEntity.fromJson(Map<String, dynamic> json) =>
       _$StoryEntityFromJson(json);
+
+  factory StoryEntity.init() => StoryEntity(
+        id: 'id',
+        name: 'name',
+        description: 'description',
+        photoUrl: 'photoUrl',
+        createdAt: DateTime.now(),
+      );
 }

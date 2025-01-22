@@ -27,4 +27,22 @@ class StoryRemoteDataSourceImpl implements StoryRemoteDataSource {
       throw ErrorHandler(exception: e).mapDioExceptionIntoErrorException();
     }
   }
+
+  @override
+  FutureResponse<StoryEntity> getStoryById(Params params) async {
+    try {
+      final result = await dio.get(
+        '/stories/${params.endPoint}',
+        queryParameters: params.queryParams,
+        data: params.data,
+      );
+      return ApiResponse.fromTResultJson(
+        result.data,
+        (data) => StoryEntity.fromJson(data as Map<String, dynamic>),
+        "story",
+      );
+    } on DioException catch (e) {
+      throw ErrorHandler(exception: e).mapDioExceptionIntoErrorException();
+    }
+  }
 }

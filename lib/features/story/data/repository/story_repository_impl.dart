@@ -19,4 +19,14 @@ class StoryRepositoryImpl implements StoryRepository {
       return Left(e);
     }
   }
+
+  @override
+  BaseResponse<StoryEntity> getStoryById(Params params) async {
+    try {
+      final response = await remoteDataSource.getStoryById(params);
+      return Right(response.result);
+    } on ErrorException catch (e) {
+      return Left(e);
+    }
+  }
 }
