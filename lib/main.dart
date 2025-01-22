@@ -9,8 +9,10 @@ import 'package:story_app/features/story/story.dart';
 import 'package:story_app/router.dart';
 
 final sl = GetIt.instance;
+
 void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
   initStoryInjection();

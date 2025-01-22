@@ -170,7 +170,7 @@ mixin _$SplashState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String token) loaded,
+    required TResult Function() loaded,
     required TResult Function(String message) failed,
   }) =>
       throw _privateConstructorUsedError;
@@ -178,7 +178,7 @@ mixin _$SplashState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String token)? loaded,
+    TResult? Function()? loaded,
     TResult? Function(String message)? failed,
   }) =>
       throw _privateConstructorUsedError;
@@ -186,7 +186,7 @@ mixin _$SplashState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String token)? loaded,
+    TResult Function()? loaded,
     TResult Function(String message)? failed,
     required TResult orElse(),
   }) =>
@@ -276,7 +276,7 @@ class _$SplashInitialImpl implements SplashInitial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String token) loaded,
+    required TResult Function() loaded,
     required TResult Function(String message) failed,
   }) {
     return initial();
@@ -287,7 +287,7 @@ class _$SplashInitialImpl implements SplashInitial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String token)? loaded,
+    TResult? Function()? loaded,
     TResult? Function(String message)? failed,
   }) {
     return initial?.call();
@@ -298,7 +298,7 @@ class _$SplashInitialImpl implements SplashInitial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String token)? loaded,
+    TResult Function()? loaded,
     TResult Function(String message)? failed,
     required TResult orElse(),
   }) {
@@ -390,7 +390,7 @@ class _$SplashLoadingImpl implements SplashLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String token) loaded,
+    required TResult Function() loaded,
     required TResult Function(String message) failed,
   }) {
     return loading();
@@ -401,7 +401,7 @@ class _$SplashLoadingImpl implements SplashLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String token)? loaded,
+    TResult? Function()? loaded,
     TResult? Function(String message)? failed,
   }) {
     return loading?.call();
@@ -412,7 +412,7 @@ class _$SplashLoadingImpl implements SplashLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String token)? loaded,
+    TResult Function()? loaded,
     TResult Function(String message)? failed,
     required TResult orElse(),
   }) {
@@ -469,8 +469,6 @@ abstract class _$$SplashLoadedImplCopyWith<$Res> {
   factory _$$SplashLoadedImplCopyWith(
           _$SplashLoadedImpl value, $Res Function(_$SplashLoadedImpl) then) =
       __$$SplashLoadedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String token});
 }
 
 /// @nodoc
@@ -480,60 +478,36 @@ class __$$SplashLoadedImplCopyWithImpl<$Res>
   __$$SplashLoadedImplCopyWithImpl(
       _$SplashLoadedImpl _value, $Res Function(_$SplashLoadedImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? token = null,
-  }) {
-    return _then(_$SplashLoadedImpl(
-      token: null == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$SplashLoadedImpl implements SplashLoaded {
-  const _$SplashLoadedImpl({required this.token});
-
-  @override
-  final String token;
+  const _$SplashLoadedImpl();
 
   @override
   String toString() {
-    return 'SplashState.loaded(token: $token)';
+    return 'SplashState.loaded()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SplashLoadedImpl &&
-            (identical(other.token, token) || other.token == token));
+        (other.runtimeType == runtimeType && other is _$SplashLoadedImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, token);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SplashLoadedImplCopyWith<_$SplashLoadedImpl> get copyWith =>
-      __$$SplashLoadedImplCopyWithImpl<_$SplashLoadedImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String token) loaded,
+    required TResult Function() loaded,
     required TResult Function(String message) failed,
   }) {
-    return loaded(token);
+    return loaded();
   }
 
   @override
@@ -541,10 +515,10 @@ class _$SplashLoadedImpl implements SplashLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String token)? loaded,
+    TResult? Function()? loaded,
     TResult? Function(String message)? failed,
   }) {
-    return loaded?.call(token);
+    return loaded?.call();
   }
 
   @override
@@ -552,12 +526,12 @@ class _$SplashLoadedImpl implements SplashLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String token)? loaded,
+    TResult Function()? loaded,
     TResult Function(String message)? failed,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(token);
+      return loaded();
     }
     return orElse();
   }
@@ -601,13 +575,7 @@ class _$SplashLoadedImpl implements SplashLoaded {
 }
 
 abstract class SplashLoaded implements SplashState {
-  const factory SplashLoaded({required final String token}) =
-      _$SplashLoadedImpl;
-
-  String get token;
-  @JsonKey(ignore: true)
-  _$$SplashLoadedImplCopyWith<_$SplashLoadedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory SplashLoaded() = _$SplashLoadedImpl;
 }
 
 /// @nodoc
@@ -676,7 +644,7 @@ class _$SplashFailedImpl implements SplashFailed {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String token) loaded,
+    required TResult Function() loaded,
     required TResult Function(String message) failed,
   }) {
     return failed(message);
@@ -687,7 +655,7 @@ class _$SplashFailedImpl implements SplashFailed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String token)? loaded,
+    TResult? Function()? loaded,
     TResult? Function(String message)? failed,
   }) {
     return failed?.call(message);
@@ -698,7 +666,7 @@ class _$SplashFailedImpl implements SplashFailed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String token)? loaded,
+    TResult Function()? loaded,
     TResult Function(String message)? failed,
     required TResult orElse(),
   }) {

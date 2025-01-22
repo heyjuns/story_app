@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:story_app/features/authentication/authentication.dart';
+import 'package:story_app/features/local_storage_service.dart';
 import 'package:story_app/main.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -55,27 +58,37 @@ class _LoginScreenState extends State<LoginScreen> {
               create: (context) => sl.get<LoginBloc>(),
               child: BlocConsumer<LoginBloc, LoginState>(
                 listener: (context, state) {
-                  state.maybeWhen(
-                      loaded: (login) => print(login.token),
-                      failed: (error) {
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                          content: Text(error.message),
-                        ));
-                      },
-                      orElse: () => print('something'));
+                  state.whenOrNull(loaded: (login) async {
+                    await LocalStorageService()
+                        .saveString(StorageKey.token.name, login.token);
+                    if (!context.mounted) return;
+                    context.push('/');
+                  }, failed: (error) {
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      content: Text(error.message),
+                    ));
+                  });
                 },
                 builder: (context, state) {
+                  bool enabled =
+                      state.maybeWhen(loading: () => false, orElse: () => true);
                   return ElevatedButton(
-                    onPressed: () {
-                      // Handle login logic here
-                      print('Email: ${_emailController.text}');
-                      print('Password: ${_passwordController.text}');
-                      context.read<LoginBloc>().add(LoginEvent.fetch(
-                          dto: LoginDto(
-                              email: _emailController.text,
-                              password: _passwordController.text)));
-                    },
-                    child: const Text('Login'),
+                    onPressed: enabled
+                        ? () {
+                            context.read<LoginBloc>().add(LoginEvent.fetch(
+                                dto: LoginDto(
+                                    email: _emailController.text,
+                                    password: _passwordController.text)));
+                          }
+                        : null,
+                    child: enabled
+                        ? const Text('Login')
+                        : const SizedBox(
+                            height: 16,
+                            width: 16,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                            )),
                   );
                 },
               ),

@@ -15,7 +15,7 @@ class SplashScreen extends StatelessWidget {
       child: BlocListener<SplashBloc, SplashState>(
         listener: (context, state) {
           state.whenOrNull(
-            // loaded: (token) =>,
+            loaded: () => context.go('/stories'),
             failed: (message) => context.go('/login'),
           );
         },

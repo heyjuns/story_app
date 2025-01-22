@@ -1,14 +1,17 @@
 import 'package:dio/dio.dart';
+import 'package:story_app/features/local_storage_service.dart';
 
 class DioInterceptor extends Interceptor {
-  // final String token;
-
   DioInterceptor();
 
   @override
-  void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
+  void onRequest(
+      RequestOptions options, RequestInterceptorHandler handler) async {
     options.baseUrl = 'https://story-api.dicoding.dev/v1';
-    // options.headers['Authorization'] = 'Bearer ';
+    String token = await LocalStorageService().getString(StorageKey.token.name);
+    if (token.isNotEmpty) {
+      options.headers['Authorization'] = 'Bearer $token';
+    }
 
     super.onRequest(options, handler);
   }
