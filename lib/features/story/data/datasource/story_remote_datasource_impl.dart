@@ -45,4 +45,18 @@ class StoryRemoteDataSourceImpl implements StoryRemoteDataSource {
       throw ErrorHandler(exception: e).mapDioExceptionIntoErrorException();
     }
   }
+
+  @override
+  FutureResponse<String> createStory(Params params) async {
+    try {
+      final result = await dio.post(
+        '/stories',
+        queryParameters: params.queryParams,
+        data: params.formData,
+      );
+      return ApiResponse.data(result.data['message'] as String);
+    } on DioException catch (e) {
+      throw ErrorHandler(exception: e).mapDioExceptionIntoErrorException();
+    }
+  }
 }

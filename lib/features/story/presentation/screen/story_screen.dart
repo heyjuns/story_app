@@ -32,57 +32,67 @@ class StoryScreen extends StatelessWidget {
 
   Widget _story(StoryEntity story) {
     return Builder(builder: (context) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Stack(
-            alignment: Alignment.bottomRight,
-            children: [
-              Hero(
-                tag: id,
-                child: Skeleton.replace(
-                  replace: true,
-                  replacement: const SizedBox(
-                    height: 500,
-                  ),
-                  child: Image.network(
-                    story.photoUrl,
-                    fit: BoxFit.cover,
-                    width: double.infinity,
-                    height: 500,
+      return SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Stack(
+              alignment: Alignment.bottomRight,
+              children: [
+                Hero(
+                  tag: id,
+                  child: Skeleton.replace(
+                    replace: true,
+                    replacement: const SizedBox(
+                      height: 500,
+                    ),
+                    child: Image.network(
+                      story.photoUrl,
+                      fit: BoxFit.cover,
+                      width: double.infinity,
+                      height: 500,
+                    ),
                   ),
                 ),
+                if (story.lat != null && story.lon != null)
+                  Container(
+                    padding: const EdgeInsets.all(8),
+                    color: Colors.white10,
+                    child: Text(
+                      '📍: ${story.lat}, ${story.lon}',
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
+                  ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const SizedBox(height: 16),
+                  // Story Title
+                  Text(
+                    story.name,
+                    style: const TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    story.description,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      color: Colors.grey,
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                ],
               ),
-              if (story.lat != null && story.lon != null)
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  color: Colors.white10,
-                  child: Text(
-                    '📍: ${story.lat}, ${story.lon}',
-                    style: Theme.of(context).textTheme.bodySmall,
-                  ),
-                ),
-            ],
-          ),
-          const SizedBox(height: 16),
-          // Story Title
-          Text(
-            story.name,
-            style: const TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
             ),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            story.description,
-            style: const TextStyle(
-              fontSize: 16,
-              color: Colors.grey,
-            ),
-          ),
-          const SizedBox(height: 16),
-        ],
+          ],
+        ),
       );
     });
   }

@@ -29,4 +29,14 @@ class StoryRepositoryImpl implements StoryRepository {
       return Left(e);
     }
   }
+
+  @override
+  BaseResponse<String> createStory(Params params) async {
+    try {
+      final response = await remoteDataSource.createStory(params);
+      return Right(response.result);
+    } on ErrorException catch (e) {
+      return Left(e);
+    }
+  }
 }
