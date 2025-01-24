@@ -54,9 +54,14 @@ mixin _$ApiResponse<T> {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this ApiResponse to a JSON map.
   Map<String, dynamic> toJson(Object? Function(T) toJsonT) =>
       throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ApiResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ApiResponseCopyWith<T, ApiResponse<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -80,6 +85,8 @@ class _$ApiResponseCopyWithImpl<T, $Res, $Val extends ApiResponse<T>>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ApiResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -113,6 +120,8 @@ class __$$ApiResponseDataImplCopyWithImpl<T, $Res>
       $Res Function(_$ApiResponseDataImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of ApiResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -152,12 +161,14 @@ class _$ApiResponseDataImpl<T> implements ApiResponseData<T> {
             const DeepCollectionEquality().equals(other.result, result));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(result));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ApiResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ApiResponseDataImplCopyWith<T, _$ApiResponseDataImpl<T>> get copyWith =>
@@ -235,8 +246,11 @@ abstract class ApiResponseData<T> implements ApiResponse<T> {
 
   @override
   T get result;
+
+  /// Create a copy of ApiResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ApiResponseDataImplCopyWith<T, _$ApiResponseDataImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

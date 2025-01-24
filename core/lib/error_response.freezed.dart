@@ -25,8 +25,12 @@ mixin _$ErrorResponse {
   @JsonKey(name: "error")
   bool get error => throw _privateConstructorUsedError;
 
+  /// Serializes this ErrorResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ErrorResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ErrorResponseCopyWith<ErrorResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -52,6 +56,8 @@ class _$ErrorResponseCopyWithImpl<$Res, $Val extends ErrorResponse>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ErrorResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +98,8 @@ class __$$ErrorResponseImplCopyWithImpl<$Res>
       _$ErrorResponseImpl _value, $Res Function(_$ErrorResponseImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ErrorResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -154,11 +162,13 @@ class _$ErrorResponseImpl
             (identical(other.error, error) || other.error == error));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, message, error);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ErrorResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ErrorResponseImplCopyWith<_$ErrorResponseImpl> get copyWith =>
@@ -186,8 +196,11 @@ abstract class _ErrorResponse implements ErrorResponse {
   @override
   @JsonKey(name: "error")
   bool get error;
+
+  /// Create a copy of ErrorResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorResponseImplCopyWith<_$ErrorResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

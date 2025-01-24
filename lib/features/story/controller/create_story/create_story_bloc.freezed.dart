@@ -50,7 +50,9 @@ mixin _$CreateStoryEvent {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CreateStoryEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CreateStoryEventCopyWith<CreateStoryEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -76,6 +78,8 @@ class _$CreateStoryEventCopyWithImpl<$Res, $Val extends CreateStoryEvent>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CreateStoryEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -89,6 +93,8 @@ class _$CreateStoryEventCopyWithImpl<$Res, $Val extends CreateStoryEvent>
     ) as $Val);
   }
 
+  /// Create a copy of CreateStoryEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StoryDtoCopyWith<$Res> get dto {
@@ -120,6 +126,8 @@ class __$$RequestImplCopyWithImpl<$Res>
       _$RequestImpl _value, $Res Function(_$RequestImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CreateStoryEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -158,7 +166,9 @@ class _$RequestImpl implements _Request {
   @override
   int get hashCode => Object.hash(runtimeType, dto);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CreateStoryEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RequestImplCopyWith<_$RequestImpl> get copyWith =>
@@ -226,8 +236,11 @@ abstract class _Request implements CreateStoryEvent {
 
   @override
   StoryDto get dto;
+
+  /// Create a copy of CreateStoryEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RequestImplCopyWith<_$RequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -302,6 +315,9 @@ class _$CreateStoryStateCopyWithImpl<$Res, $Val extends CreateStoryState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of CreateStoryState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -318,6 +334,9 @@ class __$$CreateStoryInitialImplCopyWithImpl<$Res>
   __$$CreateStoryInitialImplCopyWithImpl(_$CreateStoryInitialImpl _value,
       $Res Function(_$CreateStoryInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of CreateStoryState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -432,6 +451,9 @@ class __$$CreateStoryLoadingImplCopyWithImpl<$Res>
   __$$CreateStoryLoadingImplCopyWithImpl(_$CreateStoryLoadingImpl _value,
       $Res Function(_$CreateStoryLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of CreateStoryState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -549,6 +571,8 @@ class __$$CreateStorySuccessImplCopyWithImpl<$Res>
       $Res Function(_$CreateStorySuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CreateStoryState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -587,7 +611,9 @@ class _$CreateStorySuccessImpl implements CreateStorySuccess {
   @override
   int get hashCode => Object.hash(runtimeType, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CreateStoryState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CreateStorySuccessImplCopyWith<_$CreateStorySuccessImpl> get copyWith =>
@@ -674,7 +700,10 @@ abstract class CreateStorySuccess implements CreateStoryState {
       _$CreateStorySuccessImpl;
 
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CreateStoryState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CreateStorySuccessImplCopyWith<_$CreateStorySuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -698,6 +727,8 @@ class __$$CreateStoryFailedImplCopyWithImpl<$Res>
       $Res Function(_$CreateStoryFailedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CreateStoryState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -711,6 +742,8 @@ class __$$CreateStoryFailedImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of CreateStoryState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ErrorExceptionCopyWith<$Res> get error {
@@ -744,7 +777,9 @@ class _$CreateStoryFailedImpl implements CreateStoryFailed {
   @override
   int get hashCode => Object.hash(runtimeType, error);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CreateStoryState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CreateStoryFailedImplCopyWith<_$CreateStoryFailedImpl> get copyWith =>
@@ -831,7 +866,10 @@ abstract class CreateStoryFailed implements CreateStoryState {
       _$CreateStoryFailedImpl;
 
   ErrorException get error;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CreateStoryState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CreateStoryFailedImplCopyWith<_$CreateStoryFailedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

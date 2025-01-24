@@ -50,7 +50,9 @@ mixin _$StoryEvent {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StoryEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StoryEventCopyWith<StoryEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -74,6 +76,8 @@ class _$StoryEventCopyWithImpl<$Res, $Val extends StoryEvent>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of StoryEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -106,6 +110,8 @@ class __$$FetchImplCopyWithImpl<$Res>
       _$FetchImpl _value, $Res Function(_$FetchImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StoryEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -144,7 +150,9 @@ class _$FetchImpl implements _Fetch {
   @override
   int get hashCode => Object.hash(runtimeType, id);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StoryEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FetchImplCopyWith<_$FetchImpl> get copyWith =>
@@ -212,8 +220,11 @@ abstract class _Fetch implements StoryEvent {
 
   @override
   String get id;
+
+  /// Create a copy of StoryEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FetchImplCopyWith<_$FetchImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -288,6 +299,9 @@ class _$StoryStateCopyWithImpl<$Res, $Val extends StoryState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of StoryState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -304,6 +318,9 @@ class __$$StoryInitialImplCopyWithImpl<$Res>
   __$$StoryInitialImplCopyWithImpl(
       _$StoryInitialImpl _value, $Res Function(_$StoryInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of StoryState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -423,6 +440,8 @@ class __$$StoryLoadingImplCopyWithImpl<$Res>
       _$StoryLoadingImpl _value, $Res Function(_$StoryLoadingImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StoryState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -436,6 +455,8 @@ class __$$StoryLoadingImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of StoryState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StoryEntityCopyWith<$Res> get story {
@@ -469,7 +490,9 @@ class _$StoryLoadingImpl implements StoryLoading {
   @override
   int get hashCode => Object.hash(runtimeType, story);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StoryState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StoryLoadingImplCopyWith<_$StoryLoadingImpl> get copyWith =>
@@ -555,7 +578,10 @@ abstract class StoryLoading implements StoryState {
       _$StoryLoadingImpl;
 
   StoryEntity get story;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StoryState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StoryLoadingImplCopyWith<_$StoryLoadingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -579,6 +605,8 @@ class __$$StoryLoadedImplCopyWithImpl<$Res>
       _$StoryLoadedImpl _value, $Res Function(_$StoryLoadedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StoryState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -592,6 +620,8 @@ class __$$StoryLoadedImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of StoryState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StoryEntityCopyWith<$Res> get story {
@@ -625,7 +655,9 @@ class _$StoryLoadedImpl implements StoryLoaded {
   @override
   int get hashCode => Object.hash(runtimeType, story);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StoryState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StoryLoadedImplCopyWith<_$StoryLoadedImpl> get copyWith =>
@@ -711,7 +743,10 @@ abstract class StoryLoaded implements StoryState {
       _$StoryLoadedImpl;
 
   StoryEntity get story;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StoryState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StoryLoadedImplCopyWith<_$StoryLoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -735,6 +770,8 @@ class __$$StoryFailedImplCopyWithImpl<$Res>
       _$StoryFailedImpl _value, $Res Function(_$StoryFailedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StoryState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -748,6 +785,8 @@ class __$$StoryFailedImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of StoryState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ErrorExceptionCopyWith<$Res> get error {
@@ -781,7 +820,9 @@ class _$StoryFailedImpl implements StoryFailed {
   @override
   int get hashCode => Object.hash(runtimeType, error);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StoryState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StoryFailedImplCopyWith<_$StoryFailedImpl> get copyWith =>
@@ -867,7 +908,10 @@ abstract class StoryFailed implements StoryState {
       _$StoryFailedImpl;
 
   ErrorException get error;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StoryState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StoryFailedImplCopyWith<_$StoryFailedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

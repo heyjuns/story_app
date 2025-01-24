@@ -28,8 +28,12 @@ mixin _$StoryEntity {
   double? get lat => throw _privateConstructorUsedError;
   double? get lon => throw _privateConstructorUsedError;
 
+  /// Serializes this StoryEntity to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StoryEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StoryEntityCopyWith<StoryEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -60,6 +64,8 @@ class _$StoryEntityCopyWithImpl<$Res, $Val extends StoryEntity>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of StoryEntity
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -130,6 +136,8 @@ class __$$StoryEntityImplCopyWithImpl<$Res>
       _$StoryEntityImpl _value, $Res Function(_$StoryEntityImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StoryEntity
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -241,12 +249,14 @@ class _$StoryEntityImpl extends _StoryEntity with DiagnosticableTreeMixin {
             (identical(other.lon, lon) || other.lon == lon));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, id, name, description, photoUrl, createdAt, lat, lon);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StoryEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StoryEntityImplCopyWith<_$StoryEntityImpl> get copyWith =>
@@ -288,8 +298,11 @@ abstract class _StoryEntity extends StoryEntity {
   double? get lat;
   @override
   double? get lon;
+
+  /// Create a copy of StoryEntity
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StoryEntityImplCopyWith<_$StoryEntityImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

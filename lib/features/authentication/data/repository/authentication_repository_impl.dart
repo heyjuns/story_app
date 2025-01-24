@@ -19,4 +19,14 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
       return Left(e);
     }
   }
+
+  @override
+  BaseResponse<String> register(Params params) async {
+    try {
+      final response = await remoteDataSource.register(params);
+      return Right(response.result);
+    } on ErrorException catch (e) {
+      return Left(e);
+    }
+  }
 }
