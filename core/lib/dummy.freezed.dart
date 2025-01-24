@@ -23,8 +23,12 @@ mixin _$Dummy {
   String get name => throw _privateConstructorUsedError;
   int get age => throw _privateConstructorUsedError;
 
+  /// Serializes this Dummy to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Dummy
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DummyCopyWith<Dummy> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -46,6 +50,8 @@ class _$DummyCopyWithImpl<$Res, $Val extends Dummy>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Dummy
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -83,6 +89,8 @@ class __$$DummyImplCopyWithImpl<$Res>
       _$DummyImpl _value, $Res Function(_$DummyImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Dummy
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -138,11 +146,13 @@ class _$DummyImpl with DiagnosticableTreeMixin implements _Dummy {
             (identical(other.age, age) || other.age == age));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, name, age);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Dummy
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DummyImplCopyWith<_$DummyImpl> get copyWith =>
@@ -166,8 +176,11 @@ abstract class _Dummy implements Dummy {
   String get name;
   @override
   int get age;
+
+  /// Create a copy of Dummy
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DummyImplCopyWith<_$DummyImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

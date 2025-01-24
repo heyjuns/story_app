@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:story_app/features/authentication/presentation/screen/register_screen.dart';
 
 import 'features/authentication/authentication.dart';
 import 'features/story/story.dart';
@@ -18,6 +19,15 @@ final GoRouter router = GoRouter(
       builder: (BuildContext context, GoRouterState state) {
         return const LoginScreen();
       },
+      routes: [
+        GoRoute(
+          name: 'register',
+          path: 'register',
+          builder: (BuildContext context, GoRouterState state) {
+            return const RegisterScreen();
+          },
+        ),
+      ],
     ),
     GoRoute(
       path: '/stories',

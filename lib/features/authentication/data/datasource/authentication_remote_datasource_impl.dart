@@ -26,4 +26,18 @@ class AuthenticationRemoteDataSourceImpl
       throw ErrorHandler(exception: e).mapDioExceptionIntoErrorException();
     }
   }
+
+  @override
+  FutureResponse<String> register(Params params) async {
+    try {
+      final result = await dio.post(
+        '/register',
+        queryParameters: params.queryParams,
+        data: params.data,
+      );
+      return ApiResponse.data(result.data['message'] as String);
+    } on DioException catch (e) {
+      throw ErrorHandler(exception: e).mapDioExceptionIntoErrorException();
+    }
+  }
 }

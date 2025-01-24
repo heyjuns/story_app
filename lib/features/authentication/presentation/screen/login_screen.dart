@@ -54,6 +54,9 @@ class _LoginScreenState extends State<LoginScreen> {
               obscureText: true,
             ),
             const SizedBox(height: 16.0),
+            ElevatedButton(
+                onPressed: () => context.pushNamed('register'),
+                child: Text('Register')),
             BlocProvider(
               create: (context) => sl.get<LoginBloc>(),
               child: BlocConsumer<LoginBloc, LoginState>(
