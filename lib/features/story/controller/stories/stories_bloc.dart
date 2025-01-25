@@ -44,6 +44,10 @@ class StoriesBloc extends Bloc<StoriesEvent, StoriesState> {
     });
 
     on<_LoadMore>((event, emit) async {
+      bool hasReachedMax = state.maybeWhen(
+          loaded: (_, hasReachedMax) => hasReachedMax, orElse: () => false);
+
+      if (hasReachedMax) return;
       print(_storiesDto.toString());
       _storiesDto = _storiesDto.copyWith(page: _storiesDto.page! + 1);
 
