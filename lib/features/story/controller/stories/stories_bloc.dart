@@ -15,6 +15,7 @@ class StoriesBloc extends Bloc<StoriesEvent, StoriesState> {
   final GetStoriesUseCase getStoriesUseCase;
   StoriesBloc(this.getStoriesUseCase) : super(const StoriesState.initial()) {
     on<_Fetch>((event, emit) async {
+      _storiesDto = _storiesDto.copyWith(page: 1);
       emit(StoriesState.loading(
         stories: List.generate(
           5,
