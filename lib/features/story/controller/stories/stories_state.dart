@@ -8,6 +8,7 @@ class StoriesState with _$StoriesState {
   }) = StoriesLoading;
   const factory StoriesState.loaded({
     required List<StoryEntity> stories,
+    required bool hasReachedMax,
   }) = StoriesLoaded;
   const factory StoriesState.failed({
     required ErrorException error,

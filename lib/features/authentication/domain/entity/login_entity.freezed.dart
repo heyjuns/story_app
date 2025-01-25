@@ -24,12 +24,8 @@ mixin _$LoginEntity {
   String get name => throw _privateConstructorUsedError;
   String get token => throw _privateConstructorUsedError;
 
-  /// Serializes this LoginEntity to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of LoginEntity
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $LoginEntityCopyWith<LoginEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -53,8 +49,6 @@ class _$LoginEntityCopyWithImpl<$Res, $Val extends LoginEntity>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of LoginEntity
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -98,8 +92,6 @@ class __$$LoginEntityImplCopyWithImpl<$Res>
       _$LoginEntityImpl _value, $Res Function(_$LoginEntityImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of LoginEntity
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -165,13 +157,11 @@ class _$LoginEntityImpl with DiagnosticableTreeMixin implements _LoginEntity {
             (identical(other.token, token) || other.token == token));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, userId, name, token);
 
-  /// Create a copy of LoginEntity
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$LoginEntityImplCopyWith<_$LoginEntityImpl> get copyWith =>
@@ -200,11 +190,8 @@ abstract class _LoginEntity implements LoginEntity {
   String get name;
   @override
   String get token;
-
-  /// Create a copy of LoginEntity
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$LoginEntityImplCopyWith<_$LoginEntityImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

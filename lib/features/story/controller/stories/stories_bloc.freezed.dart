@@ -19,32 +19,38 @@ mixin _$StoriesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fetch,
+    required TResult Function() loadMore,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fetch,
+    TResult? Function()? loadMore,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetch,
+    TResult Function()? loadMore,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Fetch value) fetch,
+    required TResult Function(_LoadMore value) loadMore,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Fetch value)? fetch,
+    TResult? Function(_LoadMore value)? loadMore,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Fetch value)? fetch,
+    TResult Function(_LoadMore value)? loadMore,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -66,9 +72,6 @@ class _$StoriesEventCopyWithImpl<$Res, $Val extends StoriesEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of StoriesEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -85,9 +88,6 @@ class __$$FetchImplCopyWithImpl<$Res>
   __$$FetchImplCopyWithImpl(
       _$FetchImpl _value, $Res Function(_$FetchImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of StoriesEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -113,6 +113,7 @@ class _$FetchImpl implements _Fetch {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fetch,
+    required TResult Function() loadMore,
   }) {
     return fetch();
   }
@@ -121,6 +122,7 @@ class _$FetchImpl implements _Fetch {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fetch,
+    TResult? Function()? loadMore,
   }) {
     return fetch?.call();
   }
@@ -129,6 +131,7 @@ class _$FetchImpl implements _Fetch {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetch,
+    TResult Function()? loadMore,
     required TResult orElse(),
   }) {
     if (fetch != null) {
@@ -141,6 +144,7 @@ class _$FetchImpl implements _Fetch {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Fetch value) fetch,
+    required TResult Function(_LoadMore value) loadMore,
   }) {
     return fetch(this);
   }
@@ -149,6 +153,7 @@ class _$FetchImpl implements _Fetch {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Fetch value)? fetch,
+    TResult? Function(_LoadMore value)? loadMore,
   }) {
     return fetch?.call(this);
   }
@@ -157,6 +162,7 @@ class _$FetchImpl implements _Fetch {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Fetch value)? fetch,
+    TResult Function(_LoadMore value)? loadMore,
     required TResult orElse(),
   }) {
     if (fetch != null) {
@@ -171,12 +177,115 @@ abstract class _Fetch implements StoriesEvent {
 }
 
 /// @nodoc
+abstract class _$$LoadMoreImplCopyWith<$Res> {
+  factory _$$LoadMoreImplCopyWith(
+          _$LoadMoreImpl value, $Res Function(_$LoadMoreImpl) then) =
+      __$$LoadMoreImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadMoreImplCopyWithImpl<$Res>
+    extends _$StoriesEventCopyWithImpl<$Res, _$LoadMoreImpl>
+    implements _$$LoadMoreImplCopyWith<$Res> {
+  __$$LoadMoreImplCopyWithImpl(
+      _$LoadMoreImpl _value, $Res Function(_$LoadMoreImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadMoreImpl implements _LoadMore {
+  const _$LoadMoreImpl();
+
+  @override
+  String toString() {
+    return 'StoriesEvent.loadMore()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadMoreImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fetch,
+    required TResult Function() loadMore,
+  }) {
+    return loadMore();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fetch,
+    TResult? Function()? loadMore,
+  }) {
+    return loadMore?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fetch,
+    TResult Function()? loadMore,
+    required TResult orElse(),
+  }) {
+    if (loadMore != null) {
+      return loadMore();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Fetch value) fetch,
+    required TResult Function(_LoadMore value) loadMore,
+  }) {
+    return loadMore(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Fetch value)? fetch,
+    TResult? Function(_LoadMore value)? loadMore,
+  }) {
+    return loadMore?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Fetch value)? fetch,
+    TResult Function(_LoadMore value)? loadMore,
+    required TResult orElse(),
+  }) {
+    if (loadMore != null) {
+      return loadMore(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadMore implements StoriesEvent {
+  const factory _LoadMore() = _$LoadMoreImpl;
+}
+
+/// @nodoc
 mixin _$StoriesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(List<StoryEntity> stories) loading,
-    required TResult Function(List<StoryEntity> stories) loaded,
+    required TResult Function(List<StoryEntity> stories, bool hasReachedMax)
+        loaded,
     required TResult Function(ErrorException error) failed,
   }) =>
       throw _privateConstructorUsedError;
@@ -184,7 +293,7 @@ mixin _$StoriesState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(List<StoryEntity> stories)? loading,
-    TResult? Function(List<StoryEntity> stories)? loaded,
+    TResult? Function(List<StoryEntity> stories, bool hasReachedMax)? loaded,
     TResult? Function(ErrorException error)? failed,
   }) =>
       throw _privateConstructorUsedError;
@@ -192,7 +301,7 @@ mixin _$StoriesState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(List<StoryEntity> stories)? loading,
-    TResult Function(List<StoryEntity> stories)? loaded,
+    TResult Function(List<StoryEntity> stories, bool hasReachedMax)? loaded,
     TResult Function(ErrorException error)? failed,
     required TResult orElse(),
   }) =>
@@ -240,9 +349,6 @@ class _$StoriesStateCopyWithImpl<$Res, $Val extends StoriesState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of StoriesState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -259,9 +365,6 @@ class __$$StoriesInitialImplCopyWithImpl<$Res>
   __$$StoriesInitialImplCopyWithImpl(
       _$StoriesInitialImpl _value, $Res Function(_$StoriesInitialImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of StoriesState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -288,7 +391,8 @@ class _$StoriesInitialImpl implements StoriesInitial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(List<StoryEntity> stories) loading,
-    required TResult Function(List<StoryEntity> stories) loaded,
+    required TResult Function(List<StoryEntity> stories, bool hasReachedMax)
+        loaded,
     required TResult Function(ErrorException error) failed,
   }) {
     return initial();
@@ -299,7 +403,7 @@ class _$StoriesInitialImpl implements StoriesInitial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(List<StoryEntity> stories)? loading,
-    TResult? Function(List<StoryEntity> stories)? loaded,
+    TResult? Function(List<StoryEntity> stories, bool hasReachedMax)? loaded,
     TResult? Function(ErrorException error)? failed,
   }) {
     return initial?.call();
@@ -310,7 +414,7 @@ class _$StoriesInitialImpl implements StoriesInitial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(List<StoryEntity> stories)? loading,
-    TResult Function(List<StoryEntity> stories)? loaded,
+    TResult Function(List<StoryEntity> stories, bool hasReachedMax)? loaded,
     TResult Function(ErrorException error)? failed,
     required TResult orElse(),
   }) {
@@ -379,8 +483,6 @@ class __$$StoriesLoadingImplCopyWithImpl<$Res>
       _$StoriesLoadingImpl _value, $Res Function(_$StoriesLoadingImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of StoriesState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -426,9 +528,7 @@ class _$StoriesLoadingImpl implements StoriesLoading {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_stories));
 
-  /// Create a copy of StoriesState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$StoriesLoadingImplCopyWith<_$StoriesLoadingImpl> get copyWith =>
@@ -440,7 +540,8 @@ class _$StoriesLoadingImpl implements StoriesLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(List<StoryEntity> stories) loading,
-    required TResult Function(List<StoryEntity> stories) loaded,
+    required TResult Function(List<StoryEntity> stories, bool hasReachedMax)
+        loaded,
     required TResult Function(ErrorException error) failed,
   }) {
     return loading(stories);
@@ -451,7 +552,7 @@ class _$StoriesLoadingImpl implements StoriesLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(List<StoryEntity> stories)? loading,
-    TResult? Function(List<StoryEntity> stories)? loaded,
+    TResult? Function(List<StoryEntity> stories, bool hasReachedMax)? loaded,
     TResult? Function(ErrorException error)? failed,
   }) {
     return loading?.call(stories);
@@ -462,7 +563,7 @@ class _$StoriesLoadingImpl implements StoriesLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(List<StoryEntity> stories)? loading,
-    TResult Function(List<StoryEntity> stories)? loaded,
+    TResult Function(List<StoryEntity> stories, bool hasReachedMax)? loaded,
     TResult Function(ErrorException error)? failed,
     required TResult orElse(),
   }) {
@@ -515,10 +616,7 @@ abstract class StoriesLoading implements StoriesState {
       _$StoriesLoadingImpl;
 
   List<StoryEntity> get stories;
-
-  /// Create a copy of StoriesState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$StoriesLoadingImplCopyWith<_$StoriesLoadingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -529,7 +627,7 @@ abstract class _$$StoriesLoadedImplCopyWith<$Res> {
           _$StoriesLoadedImpl value, $Res Function(_$StoriesLoadedImpl) then) =
       __$$StoriesLoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<StoryEntity> stories});
+  $Res call({List<StoryEntity> stories, bool hasReachedMax});
 }
 
 /// @nodoc
@@ -540,18 +638,21 @@ class __$$StoriesLoadedImplCopyWithImpl<$Res>
       _$StoriesLoadedImpl _value, $Res Function(_$StoriesLoadedImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of StoriesState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? stories = null,
+    Object? hasReachedMax = null,
   }) {
     return _then(_$StoriesLoadedImpl(
       stories: null == stories
           ? _value._stories
           : stories // ignore: cast_nullable_to_non_nullable
               as List<StoryEntity>,
+      hasReachedMax: null == hasReachedMax
+          ? _value.hasReachedMax
+          : hasReachedMax // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -559,7 +660,8 @@ class __$$StoriesLoadedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$StoriesLoadedImpl implements StoriesLoaded {
-  const _$StoriesLoadedImpl({required final List<StoryEntity> stories})
+  const _$StoriesLoadedImpl(
+      {required final List<StoryEntity> stories, required this.hasReachedMax})
       : _stories = stories;
 
   final List<StoryEntity> _stories;
@@ -571,8 +673,11 @@ class _$StoriesLoadedImpl implements StoriesLoaded {
   }
 
   @override
+  final bool hasReachedMax;
+
+  @override
   String toString() {
-    return 'StoriesState.loaded(stories: $stories)';
+    return 'StoriesState.loaded(stories: $stories, hasReachedMax: $hasReachedMax)';
   }
 
   @override
@@ -580,16 +685,16 @@ class _$StoriesLoadedImpl implements StoriesLoaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$StoriesLoadedImpl &&
-            const DeepCollectionEquality().equals(other._stories, _stories));
+            const DeepCollectionEquality().equals(other._stories, _stories) &&
+            (identical(other.hasReachedMax, hasReachedMax) ||
+                other.hasReachedMax == hasReachedMax));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_stories));
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_stories), hasReachedMax);
 
-  /// Create a copy of StoriesState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$StoriesLoadedImplCopyWith<_$StoriesLoadedImpl> get copyWith =>
@@ -600,10 +705,11 @@ class _$StoriesLoadedImpl implements StoriesLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(List<StoryEntity> stories) loading,
-    required TResult Function(List<StoryEntity> stories) loaded,
+    required TResult Function(List<StoryEntity> stories, bool hasReachedMax)
+        loaded,
     required TResult Function(ErrorException error) failed,
   }) {
-    return loaded(stories);
+    return loaded(stories, hasReachedMax);
   }
 
   @override
@@ -611,10 +717,10 @@ class _$StoriesLoadedImpl implements StoriesLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(List<StoryEntity> stories)? loading,
-    TResult? Function(List<StoryEntity> stories)? loaded,
+    TResult? Function(List<StoryEntity> stories, bool hasReachedMax)? loaded,
     TResult? Function(ErrorException error)? failed,
   }) {
-    return loaded?.call(stories);
+    return loaded?.call(stories, hasReachedMax);
   }
 
   @override
@@ -622,12 +728,12 @@ class _$StoriesLoadedImpl implements StoriesLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(List<StoryEntity> stories)? loading,
-    TResult Function(List<StoryEntity> stories)? loaded,
+    TResult Function(List<StoryEntity> stories, bool hasReachedMax)? loaded,
     TResult Function(ErrorException error)? failed,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(stories);
+      return loaded(stories, hasReachedMax);
     }
     return orElse();
   }
@@ -671,14 +777,13 @@ class _$StoriesLoadedImpl implements StoriesLoaded {
 }
 
 abstract class StoriesLoaded implements StoriesState {
-  const factory StoriesLoaded({required final List<StoryEntity> stories}) =
-      _$StoriesLoadedImpl;
+  const factory StoriesLoaded(
+      {required final List<StoryEntity> stories,
+      required final bool hasReachedMax}) = _$StoriesLoadedImpl;
 
   List<StoryEntity> get stories;
-
-  /// Create a copy of StoriesState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  bool get hasReachedMax;
+  @JsonKey(ignore: true)
   _$$StoriesLoadedImplCopyWith<_$StoriesLoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -702,8 +807,6 @@ class __$$StoriesFailedImplCopyWithImpl<$Res>
       _$StoriesFailedImpl _value, $Res Function(_$StoriesFailedImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of StoriesState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -717,8 +820,6 @@ class __$$StoriesFailedImplCopyWithImpl<$Res>
     ));
   }
 
-  /// Create a copy of StoriesState
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ErrorExceptionCopyWith<$Res> get error {
@@ -752,9 +853,7 @@ class _$StoriesFailedImpl implements StoriesFailed {
   @override
   int get hashCode => Object.hash(runtimeType, error);
 
-  /// Create a copy of StoriesState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$StoriesFailedImplCopyWith<_$StoriesFailedImpl> get copyWith =>
@@ -765,7 +864,8 @@ class _$StoriesFailedImpl implements StoriesFailed {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(List<StoryEntity> stories) loading,
-    required TResult Function(List<StoryEntity> stories) loaded,
+    required TResult Function(List<StoryEntity> stories, bool hasReachedMax)
+        loaded,
     required TResult Function(ErrorException error) failed,
   }) {
     return failed(error);
@@ -776,7 +876,7 @@ class _$StoriesFailedImpl implements StoriesFailed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(List<StoryEntity> stories)? loading,
-    TResult? Function(List<StoryEntity> stories)? loaded,
+    TResult? Function(List<StoryEntity> stories, bool hasReachedMax)? loaded,
     TResult? Function(ErrorException error)? failed,
   }) {
     return failed?.call(error);
@@ -787,7 +887,7 @@ class _$StoriesFailedImpl implements StoriesFailed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(List<StoryEntity> stories)? loading,
-    TResult Function(List<StoryEntity> stories)? loaded,
+    TResult Function(List<StoryEntity> stories, bool hasReachedMax)? loaded,
     TResult Function(ErrorException error)? failed,
     required TResult orElse(),
   }) {
@@ -840,10 +940,7 @@ abstract class StoriesFailed implements StoriesState {
       _$StoriesFailedImpl;
 
   ErrorException get error;
-
-  /// Create a copy of StoriesState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$StoriesFailedImplCopyWith<_$StoriesFailedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

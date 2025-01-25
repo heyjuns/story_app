@@ -24,12 +24,8 @@ mixin _$RegisterDto {
   String get email => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
 
-  /// Serializes this RegisterDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of RegisterDto
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $RegisterDtoCopyWith<RegisterDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -53,8 +49,6 @@ class _$RegisterDtoCopyWithImpl<$Res, $Val extends RegisterDto>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of RegisterDto
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -98,8 +92,6 @@ class __$$RegisterDtoImplCopyWithImpl<$Res>
       _$RegisterDtoImpl _value, $Res Function(_$RegisterDtoImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of RegisterDto
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -166,13 +158,11 @@ class _$RegisterDtoImpl with DiagnosticableTreeMixin implements _RegisterDto {
                 other.password == password));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, name, email, password);
 
-  /// Create a copy of RegisterDto
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$RegisterDtoImplCopyWith<_$RegisterDtoImpl> get copyWith =>
@@ -201,11 +191,8 @@ abstract class _RegisterDto implements RegisterDto {
   String get email;
   @override
   String get password;
-
-  /// Create a copy of RegisterDto
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$RegisterDtoImplCopyWith<_$RegisterDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

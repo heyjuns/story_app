@@ -23,12 +23,8 @@ mixin _$LoginDto {
   String get email => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
 
-  /// Serializes this LoginDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of LoginDto
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $LoginDtoCopyWith<LoginDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -51,8 +47,6 @@ class _$LoginDtoCopyWithImpl<$Res, $Val extends LoginDto>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of LoginDto
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -91,8 +85,6 @@ class __$$LoginDtoImplCopyWithImpl<$Res>
       _$LoginDtoImpl _value, $Res Function(_$LoginDtoImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of LoginDto
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -149,13 +141,11 @@ class _$LoginDtoImpl with DiagnosticableTreeMixin implements _LoginDto {
                 other.password == password));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, email, password);
 
-  /// Create a copy of LoginDto
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$LoginDtoImplCopyWith<_$LoginDtoImpl> get copyWith =>
@@ -181,11 +171,8 @@ abstract class _LoginDto implements LoginDto {
   String get email;
   @override
   String get password;
-
-  /// Create a copy of LoginDto
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$LoginDtoImplCopyWith<_$LoginDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

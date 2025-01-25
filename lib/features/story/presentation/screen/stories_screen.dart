@@ -5,8 +5,32 @@ import 'package:skeletonizer/skeletonizer.dart';
 import 'package:story_app/features/local_storage_service.dart';
 import '../../story.dart';
 
-class StoriesScreen extends StatelessWidget {
+class StoriesScreen extends StatefulWidget {
   const StoriesScreen({super.key});
+
+  @override
+  State<StoriesScreen> createState() => _StoriesScreenState();
+}
+
+class _StoriesScreenState extends State<StoriesScreen> {
+  final ScrollController scrollController = ScrollController();
+
+  @override
+  void initState() {
+    super.initState();
+    scrollController.addListener(() {
+      if (scrollController.position.pixels >=
+          scrollController.position.maxScrollExtent) {
+        context.read<StoriesBloc>().add(const StoriesEvent.loadMore());
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    scrollController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,22 +63,37 @@ class StoriesScreen extends StatelessWidget {
           return state.maybeWhen(
               loading: (stories) => Skeletonizer(
                     enabled: true,
-                    child: _stories(stories),
+                    child: _stories(stories, true),
                   ),
-              loaded: (stories) => _stories(stories),
+              loaded: (stories, hasReachedMax) =>
+                  _stories(stories, hasReachedMax),
+              failed: (error) {
+                return Center(
+                  child: Text(error.message),
+                );
+              },
               orElse: () => const SizedBox());
         },
       ),
     );
   }
 
-  ListView _stories(List<StoryEntity> stories) {
+  ListView _stories(List<StoryEntity> stories, bool hasReachedMax) {
     return ListView.separated(
-      itemCount: stories.length,
+      itemCount: stories.length + (hasReachedMax ? 0 : 1),
+      controller: scrollController,
       separatorBuilder: (context, index) => const SizedBox(
         height: 32,
       ),
       itemBuilder: (BuildContext context, int index) {
+        if (index == stories.length && !hasReachedMax) {
+          return const Center(
+            child: Padding(
+              padding: EdgeInsets.all(8),
+              child: CircularProgressIndicator(),
+            ),
+          );
+        }
         final story = stories[index];
         return GestureDetector(
           onTap: () =>

@@ -10,6 +10,8 @@ part 'stories_state.dart';
 part 'stories_bloc.freezed.dart';
 
 class StoriesBloc extends Bloc<StoriesEvent, StoriesState> {
+  StoriesDto _storiesDto = StoriesDto(size: 10, page: 1);
+  List<StoryEntity> _list = [];
   final GetStoriesUseCase getStoriesUseCase;
   StoriesBloc(this.getStoriesUseCase) : super(const StoriesState.initial()) {
     on<_Fetch>((event, emit) async {
@@ -25,11 +27,36 @@ class StoriesBloc extends Bloc<StoriesEvent, StoriesState> {
           ),
         ),
       ));
-      final result = await getStoriesUseCase.call(const Params());
+
+      final result = await getStoriesUseCase.call(Params(
+        queryParams: _storiesDto.toJson(),
+      ));
 
       result.fold(
         (l) => emit(StoriesState.failed(error: l)),
-        (r) => emit(StoriesState.loaded(stories: r)),
+        (r) {
+          _list = r;
+          emit(StoriesState.loaded(
+              stories: _list, hasReachedMax: r.length < _storiesDto.size));
+        },
+      );
+    });
+
+    on<_LoadMore>((event, emit) async {
+      print(_storiesDto.toString());
+      _storiesDto = _storiesDto.copyWith(page: _storiesDto.page! + 1);
+
+      final result = await getStoriesUseCase.call(Params(
+        queryParams: _storiesDto.toJson(),
+      ));
+
+      result.fold(
+        (l) => emit(StoriesState.failed(error: l)),
+        (r) {
+          _list = List.from(_list)..addAll(r);
+          emit(StoriesState.loaded(
+              stories: _list, hasReachedMax: r.length < _storiesDto.size));
+        },
       );
     });
   }

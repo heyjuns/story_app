@@ -21,9 +21,7 @@ mixin _$StoryDto {
   double? get lat => throw _privateConstructorUsedError;
   double? get lon => throw _privateConstructorUsedError;
 
-  /// Create a copy of StoryDto
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $StoryDtoCopyWith<StoryDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -46,8 +44,6 @@ class _$StoryDtoCopyWithImpl<$Res, $Val extends StoryDto>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of StoryDto
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -96,8 +92,6 @@ class __$$StoryDtoImplCopyWithImpl<$Res>
       _$StoryDtoImpl _value, $Res Function(_$StoryDtoImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of StoryDto
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -163,9 +157,7 @@ class _$StoryDtoImpl extends _StoryDto {
   @override
   int get hashCode => Object.hash(runtimeType, description, photo, lat, lon);
 
-  /// Create a copy of StoryDto
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$StoryDtoImplCopyWith<_$StoryDtoImpl> get copyWith =>
@@ -188,11 +180,8 @@ abstract class _StoryDto extends StoryDto {
   double? get lat;
   @override
   double? get lon;
-
-  /// Create a copy of StoryDto
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$StoryDtoImplCopyWith<_$StoryDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

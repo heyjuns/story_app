@@ -66,9 +66,6 @@ class _$SplashEventCopyWithImpl<$Res, $Val extends SplashEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of SplashEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -85,9 +82,6 @@ class __$$ValidateImplCopyWithImpl<$Res>
   __$$ValidateImplCopyWithImpl(
       _$ValidateImpl _value, $Res Function(_$ValidateImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of SplashEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -240,9 +234,6 @@ class _$SplashStateCopyWithImpl<$Res, $Val extends SplashState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of SplashState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -259,9 +250,6 @@ class __$$SplashInitialImplCopyWithImpl<$Res>
   __$$SplashInitialImplCopyWithImpl(
       _$SplashInitialImpl _value, $Res Function(_$SplashInitialImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of SplashState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -376,9 +364,6 @@ class __$$SplashLoadingImplCopyWithImpl<$Res>
   __$$SplashLoadingImplCopyWithImpl(
       _$SplashLoadingImpl _value, $Res Function(_$SplashLoadingImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of SplashState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -493,9 +478,6 @@ class __$$SplashLoadedImplCopyWithImpl<$Res>
   __$$SplashLoadedImplCopyWithImpl(
       _$SplashLoadedImpl _value, $Res Function(_$SplashLoadedImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of SplashState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -613,8 +595,6 @@ class __$$SplashFailedImplCopyWithImpl<$Res>
       _$SplashFailedImpl _value, $Res Function(_$SplashFailedImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of SplashState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -653,9 +633,7 @@ class _$SplashFailedImpl implements SplashFailed {
   @override
   int get hashCode => Object.hash(runtimeType, message);
 
-  /// Create a copy of SplashState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SplashFailedImplCopyWith<_$SplashFailedImpl> get copyWith =>
@@ -741,10 +719,7 @@ abstract class SplashFailed implements SplashState {
       _$SplashFailedImpl;
 
   String get message;
-
-  /// Create a copy of SplashState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SplashFailedImplCopyWith<_$SplashFailedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

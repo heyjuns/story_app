@@ -50,9 +50,7 @@ mixin _$LoginEvent {
   }) =>
       throw _privateConstructorUsedError;
 
-  /// Create a copy of LoginEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $LoginEventCopyWith<LoginEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -78,8 +76,6 @@ class _$LoginEventCopyWithImpl<$Res, $Val extends LoginEvent>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of LoginEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -93,8 +89,6 @@ class _$LoginEventCopyWithImpl<$Res, $Val extends LoginEvent>
     ) as $Val);
   }
 
-  /// Create a copy of LoginEvent
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $LoginDtoCopyWith<$Res> get dto {
@@ -125,8 +119,6 @@ class __$$FetchImplCopyWithImpl<$Res>
       _$FetchImpl _value, $Res Function(_$FetchImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of LoginEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -165,9 +157,7 @@ class _$FetchImpl implements _Fetch {
   @override
   int get hashCode => Object.hash(runtimeType, dto);
 
-  /// Create a copy of LoginEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FetchImplCopyWith<_$FetchImpl> get copyWith =>
@@ -235,11 +225,8 @@ abstract class _Fetch implements LoginEvent {
 
   @override
   LoginDto get dto;
-
-  /// Create a copy of LoginEvent
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FetchImplCopyWith<_$FetchImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -314,9 +301,6 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of LoginState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -333,9 +317,6 @@ class __$$LoginInitialImplCopyWithImpl<$Res>
   __$$LoginInitialImplCopyWithImpl(
       _$LoginInitialImpl _value, $Res Function(_$LoginInitialImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LoginState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -450,9 +431,6 @@ class __$$LoginLoadingImplCopyWithImpl<$Res>
   __$$LoginLoadingImplCopyWithImpl(
       _$LoginLoadingImpl _value, $Res Function(_$LoginLoadingImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LoginState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -572,8 +550,6 @@ class __$$LoginLoadedImplCopyWithImpl<$Res>
       _$LoginLoadedImpl _value, $Res Function(_$LoginLoadedImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of LoginState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -587,8 +563,6 @@ class __$$LoginLoadedImplCopyWithImpl<$Res>
     ));
   }
 
-  /// Create a copy of LoginState
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $LoginEntityCopyWith<$Res> get login {
@@ -622,9 +596,7 @@ class _$LoginLoadedImpl implements LoginLoaded {
   @override
   int get hashCode => Object.hash(runtimeType, login);
 
-  /// Create a copy of LoginState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$LoginLoadedImplCopyWith<_$LoginLoadedImpl> get copyWith =>
@@ -710,10 +682,7 @@ abstract class LoginLoaded implements LoginState {
       _$LoginLoadedImpl;
 
   LoginEntity get login;
-
-  /// Create a copy of LoginState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$LoginLoadedImplCopyWith<_$LoginLoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -737,8 +706,6 @@ class __$$LoginFailedImplCopyWithImpl<$Res>
       _$LoginFailedImpl _value, $Res Function(_$LoginFailedImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of LoginState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -752,8 +719,6 @@ class __$$LoginFailedImplCopyWithImpl<$Res>
     ));
   }
 
-  /// Create a copy of LoginState
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ErrorExceptionCopyWith<$Res> get error {
@@ -787,9 +752,7 @@ class _$LoginFailedImpl implements LoginFailed {
   @override
   int get hashCode => Object.hash(runtimeType, error);
 
-  /// Create a copy of LoginState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$LoginFailedImplCopyWith<_$LoginFailedImpl> get copyWith =>
@@ -875,10 +838,7 @@ abstract class LoginFailed implements LoginState {
       _$LoginFailedImpl;
 
   ErrorException get error;
-
-  /// Create a copy of LoginState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$LoginFailedImplCopyWith<_$LoginFailedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
