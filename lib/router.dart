@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:story_app/features/authentication/presentation/screen/register_screen.dart';
-
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'features/maps/maps.dart';
 import 'features/authentication/authentication.dart';
 import 'features/story/story.dart';
 
@@ -51,6 +51,15 @@ final GoRouter router = GoRouter(
           },
         ),
       ],
+    ),
+    GoRoute(
+      path: '/maps',
+      builder: (BuildContext context, GoRouterState state) {
+        final MapsArgs args = state.extra as MapsArgs;
+        return MapsScreen(
+          args: args,
+        );
+      },
     ),
   ],
 );

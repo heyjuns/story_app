@@ -69,7 +69,17 @@ class _StoriesScreenState extends State<StoriesScreen> {
                   _stories(stories, hasReachedMax),
               failed: (error) {
                 return Center(
-                  child: Text(error.message),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(error.message),
+                      ElevatedButton.icon(
+                          onPressed: () => context.read<StoriesBloc>()
+                            ..add(const StoriesEvent.fetch()),
+                          icon: const Icon(Icons.refresh),
+                          label: const Text('Refresh'))
+                    ],
+                  ),
                 );
               },
               orElse: () => const SizedBox());

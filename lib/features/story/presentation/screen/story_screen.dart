@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import 'package:story_app/features/story/story.dart';
 import 'package:story_app/main.dart';
@@ -18,7 +20,30 @@ class StoryScreen extends StatelessWidget {
       child: BlocBuilder<StoryBloc, StoryState>(
         builder: (context, state) {
           return Scaffold(
-            appBar: AppBar(),
+            appBar: AppBar(
+              actions: [
+                state.maybeWhen(
+                    loaded: (story) {
+                      if (story.lat == null && story.lon == null) {
+                        return const SizedBox();
+                      }
+
+                      return IconButton(
+                          icon: const Icon(
+                            Icons.location_history,
+                            color: Colors.red,
+                          ),
+                          onPressed: () {
+                            context.push('/maps',
+                                extra: MapsArgs(
+                                    previewOnly: true,
+                                    lat: story.lat,
+                                    lon: story.lon));
+                          });
+                    },
+                    orElse: () => SizedBox()),
+              ],
+            ),
             body: state.maybeWhen(
                 loading: (story) =>
                     Skeletonizer(enabled: true, child: _story(story)),

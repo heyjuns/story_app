@@ -1,8 +1,9 @@
 import 'package:core/core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:story_app/features/story/domain/dto/story_dto.dart';
 import 'package:story_app/features/story/story.dart';
+
+import '../../domain/dto/story_dto.dart';
 
 part 'create_story_event.dart';
 part 'create_story_state.dart';

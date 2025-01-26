@@ -5,4 +5,4 @@ export 'story.dart';
 export 'story_container.dart';
 export 'story_provider.dart';
 export 'presentation/presentation.dart';
-export 'dto/dto.dart';
+export 'domain/dto/dto.dart';
