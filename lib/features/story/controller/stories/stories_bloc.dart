@@ -48,7 +48,6 @@ class StoriesBloc extends Bloc<StoriesEvent, StoriesState> {
           loaded: (_, hasReachedMax) => hasReachedMax, orElse: () => false);
 
       if (hasReachedMax) return;
-      print(_storiesDto.toString());
       _storiesDto = _storiesDto.copyWith(page: _storiesDto.page! + 1);
 
       final result = await getStoriesUseCase.call(Params(

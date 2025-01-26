@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:story_app/features/authentication/authentication.dart';
 import 'package:story_app/features/local_storage_service.dart';
 import 'package:story_app/main.dart';
@@ -56,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(height: 16.0),
             ElevatedButton(
                 onPressed: () => context.pushNamed('register'),
-                child: Text('Register')),
+                child: const Text('Register')),
             BlocProvider(
               create: (context) => sl.get<LoginBloc>(),
               child: BlocConsumer<LoginBloc, LoginState>(

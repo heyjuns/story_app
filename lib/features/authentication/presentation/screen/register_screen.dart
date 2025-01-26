@@ -22,7 +22,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       create: (context) => sl.get<RegisterBloc>(),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Register'),
+          title: const Text('Register'),
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -30,25 +30,25 @@ class _RegisterScreenState extends State<RegisterScreen> {
             children: [
               TextField(
                 controller: _nameController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Name',
                 ),
               ),
               TextField(
                 controller: _emailController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Email',
                 ),
                 keyboardType: TextInputType.emailAddress,
               ),
               TextField(
                 controller: _passwordController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Password',
                 ),
                 obscureText: true,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               BlocConsumer<RegisterBloc, RegisterState>(
                 listener: (context, state) {
                   state.whenOrNull(
@@ -79,7 +79,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         password: _passwordController.text)));
                           }
                         : null,
-                    child: Text('Register'),
+                    child: const Text('Register'),
                   );
                 },
               ),

@@ -114,13 +114,6 @@ class _CreateStoryScreenState extends State<CreateStoryScreen> {
                             ? () {
                                 if (_formKey.currentState?.validate() ??
                                     false) {
-                                  // Handle form submission
-                                  print(
-                                      'Story submitted: ${_descriptionController.text}');
-                                  if (_image != null) {
-                                    print('Image path: ${_image!.path}');
-                                  }
-
                                   context.read<CreateStoryBloc>().add(
                                       CreateStoryEvent.request(
                                           dto: StoryDto(
